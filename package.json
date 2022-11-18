@@ -1,0 +1,31 @@
+{
+  "name": "pro-gramme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "body-parser": "^1.19.0",
+    "express-validation": "^3.0.8",
+    "bcrypt": "^5.0.1",
+    "jsonwebtoken": "^8.5.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/eslint-parser": "^7.15.8",
+    "eslint": "^8.0.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-config-standard-jsx": "^10.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-standard": "^5.0.0"
+  }
+}

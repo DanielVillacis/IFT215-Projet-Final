@@ -1,0 +1,30 @@
+{
+  "plugins": ["node"],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    },
+    "requireConfigFile": false
+  },
+  "env": {
+    "es6": true,
+    "jest": true,
+    "node": true
+  },
+  "globals": {},
+  "extends": "standard",
+  "rules": {
+    "semi": ["error", "always"],
+    "no-var": "error",
+    "no-use-before-define": "error",
+    "prefer-const": 2,
+    "space-before-function-paren": "off",
+    "prefer-template": 1,
+    "eqeqeq": 2,
+    "brace-style": ["error", "1tbs", { "allowSingleLine": false }],
+    "quotes": ["error", "single"],
+    "curly": ["error", "all"]
+  }
+}

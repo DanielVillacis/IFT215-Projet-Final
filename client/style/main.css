@@ -1,0 +1,232 @@
+:root{
+    --fond-menu : #444444;
+    --couleur-menu : aliceblue;
+    --fond-menu-inverse: salmon;
+    --couleur-menu-inverse: #223;
+    --fond-menu-choisi: #123456;
+}
+
+footer{
+    border: 2px solid black;
+    text-align: center;
+    width: 500px;
+    margin: auto;
+    padding: 20px;
+    clear: both;
+}
+
+nav{
+    text-align: center;
+}
+
+#menu-principal {
+    background-color: var(--fond-menu, #000);
+    padding-top: 4px;
+}
+
+.barre-menu {
+    overflow: hidden;
+    display: inline-block;
+}
+
+.barre-menu a {
+    float: left;
+    font-size: 16px;
+    color: var(--couleur-menu);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: color 0.5s, background-color 0.5s;
+}
+
+.deroulant {
+    float: left;
+    overflow: hidden;
+}
+
+.deroulant .btn-deroulant {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: var(--couleur-menu);
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    transition: color 0.5s, background-color 0.5s;
+}
+
+.barre-menu a:hover, .deroulant:hover .btn-deroulant {
+    background-color: var(--fond-menu-inverse);
+    color: var(--couleur-menu-inverse);
+}
+
+.sous-menu {
+    display: none;
+    position: absolute;
+    background-color: var(--fond-menu);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.sous-menu a {
+    float: none;
+    color: var(--couleur-menu);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    transition: color 0.5s, background-color 0.5s;
+}
+
+.sous-menu a:hover {
+    background-color: var(--fond-menu-inverse);
+    color: var(--couleur-menu-inverse);
+}
+
+.deroulant:hover .sous-menu {
+    display: block;
+}
+
+#texte-acceuil img{
+    float: right;
+    height: 150px;
+}
+
+#texte-acceuil, #section-inscription, #section-pdv{
+    width: 66%;
+    margin-left: 34%;
+}
+
+#menu-gauche{
+    position: absolute;
+    width:30%;
+    text-align: center;
+    font-size: x-large;
+}
+
+#menu-gauche a{
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    padding: 1.5%;
+    background-color: var(--fond-menu);
+    color: var(--couleur-menu);
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.5s, background-color 0.5s;
+}
+
+#menu-gauche a:hover, #menu-gauche a.choisi:hover{
+    background-color: var(--fond-menu-inverse);
+    color: var(--couleur-menu-inverse);
+}
+
+#menu-gauche a.choisi{
+    background-color: var(--fond-menu-choisi);
+}
+
+fieldset{
+    max-width: 500px;
+}
+form .group{
+    margin-bottom: 20px;
+}
+
+form .group label{
+    display: inline-block;
+    width: 45%;
+    margin-right: 5%;
+    text-align: right;
+}
+
+form .group select{
+    width: 32%;
+}
+#renseignement-auth input{
+    width: 30%;
+}
+
+.submit-group input[type=submit]{
+    width: 150px
+}
+.submit-group {
+    max-width: 500px;
+    text-align: right;
+    padding: 14px 0px 14px 28px;
+}
+
+#table-inscription {
+    border-collapse: collapse;
+    margin: 25px 25px 25px 0;
+}
+
+#table-inscription caption{
+    font-size: x-large;
+}
+
+#table-inscription td{
+    border: 1px solid black;
+    padding: 10px;
+}
+
+#pdv-grille {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+    grid-row-gap: 25px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+}
+
+.pdv-item {
+    border: 1px solid rgba(0,0,0,0.8);
+    padding: 15px;
+    text-align: center;
+}
+
+.pdv-item h1{
+    font-size: x-large;
+    margin: 0 0 15px;
+}
+
+.pdv-item h2{
+    font-size: medium;
+    text-align: left;
+}
+.pdv-item ul{
+    padding-left: 20px;
+}
+
+#pdv-flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+#pdv-flex .pdv-item{
+    margin: 0 25px 25px 0;
+}
+
+#corps-principal{
+    margin-bottom: 25px;
+}
+
+@media screen and (max-width: 900px) {
+    #pdv-grille {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #pdv-grille {
+        grid-template-columns: auto;
+    }
+}
+
+.centrer {
+    text-align: center;
+}
+
+

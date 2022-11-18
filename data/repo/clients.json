@@ -1,0 +1,91 @@
+[
+    {
+        "id": 1,
+        "prenom": "Mathias34",
+        "nom": "Thomas",
+        "age": 18,
+        "adresse": "1 rue de terre",
+        "pays": "Canada",
+        "courriel": "aaa@bbb.com",
+        "mdp": "$2b$08$CEfAuisfWI/driqC4REyfOo/y8RG0g1dw7ngClRLBk1QANEs.U53u",
+        "panier": {
+            "valeur": 141.75,
+            "items": [
+                {
+                    "id": 0,
+                    "idProduit": 1,
+                    "nomProduit": "Tomate",
+                    "descriptionProduit": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
+                    "prix": 24.76,
+                    "quantite": 3
+                },
+                {
+                    "id": 1,
+                    "idProduit": 2,
+                    "nomProduit": "concombre",
+                    "descriptionProduit": "pas un jouet",
+                    "prix": 2.23,
+                    "quantite": 6
+                },
+                {
+                    "id": 2,
+                    "idProduit": 3,
+                    "nomProduit": "carrote",
+                    "descriptionProduit": "une legume orange",
+                    "prix": 1.89,
+                    "quantite": 2
+                },
+                {
+                    "id": 3,
+                    "idProduit": 6,
+                    "nomProduit": "orange",
+                    "descriptionProduit": "un fruit de couleur orange",
+                    "prix": 0.79,
+                    "quantite": 1
+                },
+                {
+                    "id": 4,
+                    "idProduit": 0,
+                    "nomProduit": "Banane",
+                    "descriptionProduit": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
+                    "prix": 24.76,
+                    "quantite": 2
+                }
+            ]
+        },
+        "historique": [
+            {
+                "id": -1,
+                "idClient": 1,
+                "montant": 99.04,
+                "produits": [
+                    {
+                        "id": 0,
+                        "idProduit": 1,
+                        "nomProduit": "Tomate",
+                        "descriptionProduit": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
+                        "prix": 24.76,
+                        "quantite": 4
+                    }
+                ],
+                "status": "reçue",
+                "date": "2021-11-13T21:44:38.858Z"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "prenom": "Mathias",
+        "nom": "Thomas",
+        "age": 18,
+        "adresse": "1 rue de terre",
+        "pays": "Canada",
+        "courriel": "qwer@tyu.com",
+        "mdp": "$2b$08$SYOkCCz.wRs49Pv89.ohP.e.uoiQGcya7y5Vw9bRCAqmGtyoP6hi2",
+        "panier": {
+            "valeur": 0,
+            "items": []
+        },
+        "historique": []
+    }
+]

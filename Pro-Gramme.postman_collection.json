@@ -1,0 +1,1484 @@
+{
+	"info": {
+		"_postman_id": "075d7312-86c4-46a9-bccc-e35fa40697cf",
+		"name": "Pro-Gramme",
+		"description": "Ensembles des requêtes possible sur le serveur de Pro-Gramme.\n\nUtilise l'environnement Pro-Gramme local",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "status",
+			"item": [
+				{
+					"name": "statusCommande",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/statusCommande",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"statusCommande"
+							]
+						},
+						"description": "Retourne la liste des status possibles"
+					},
+					"response": []
+				}
+			],
+			"description": "Requêtes concernant les status de commande",
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "commerces",
+			"item": [
+				{
+					"name": "Get commerces",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/commerces",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"commerces"
+							]
+						},
+						"description": "Retourne la liste de tous les commerces."
+					},
+					"response": []
+				},
+				{
+					"name": "Get commerce local",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/commerces/local/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"commerces",
+								"local",
+								"1"
+							]
+						},
+						"description": "Retourne un commerce local par son index"
+					},
+					"response": []
+				},
+				{
+					"name": "Get commerce international",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/commerces/international/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"commerces",
+								"international",
+								"1"
+							]
+						},
+						"description": "Retourne un commerce international par son index"
+					},
+					"response": []
+				}
+			],
+			"description": "Requêtes concernant la partie commerces du site. Basée sur ce qui a été fait en classe",
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Produits",
+			"item": [
+				{
+					"name": "Client",
+					"item": [
+						{
+							"name": "Get produits",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/produits",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"produits"
+									]
+								},
+								"description": "Retourne la liste de tous les produits"
+							},
+							"response": []
+						},
+						{
+							"name": "Get produit par id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/produits/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"produits",
+										"1"
+									]
+								},
+								"description": "Retourne un produit par son id"
+							},
+							"response": []
+						},
+						{
+							"name": "Recherche produit",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/produits?prix=24.76",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"produits"
+									],
+									"query": [
+										{
+											"key": "serial",
+											"value": "we23545",
+											"disabled": true
+										},
+										{
+											"key": "nom",
+											"value": "Banane",
+											"disabled": true
+										},
+										{
+											"key": "description",
+											"value": "poirier",
+											"disabled": true
+										},
+										{
+											"key": "prix",
+											"value": "24.76"
+										}
+									]
+								},
+								"description": "Fait une recherche sur les produits"
+							},
+							"response": []
+						},
+						{
+							"name": "Ajout Produit",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"serial\": \"sdfds\",\r\n    \"nom\": \"concombre\",\r\n    \"description\": \"pas un jouet\",\r\n    \"prix\": 2.23,\r\n    \"qte_inventaire\": 50,\r\n    \"categorie\": { \"id\": 1}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/produits",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"produits"
+									]
+								},
+								"description": "Admin seulement"
+							},
+							"response": []
+						},
+						{
+							"name": "Modifier produit",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"serial\": \"sdfds\",\r\n    \"nom\": \"concombre\",\r\n    \"description\": \"pas un jouet\",\r\n    \"prix\": 2.23,\r\n    \"qte_inventaire\": 50,\r\n    \"categorie\": { \"id\": 1}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/produits/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"produits",
+										"1"
+									]
+								},
+								"description": "Admin seulement"
+							},
+							"response": []
+						},
+						{
+							"name": "Effacer Produit",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/produits/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"produits",
+										"1"
+									]
+								},
+								"description": "Admin seulement"
+							},
+							"response": []
+						}
+					],
+					"description": "Requêtes du point de vue d'une client. Il faut se connecter en tant qu'un client (voir la section Connexion) puis mettre le token retourné dans le fichier des variables d'environnement (dans le menu Environments à gauche). La valeur va dans la case valeur actuelle de la variable token client",
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "{{token_client}}",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Admin",
+					"item": [
+						{
+							"name": "Get produits",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/produits",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"produits"
+									]
+								},
+								"description": "Retourne la liste de tous les produits"
+							},
+							"response": []
+						},
+						{
+							"name": "Recherche produit",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/produits?prix=24.76",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"produits"
+									],
+									"query": [
+										{
+											"key": "serial",
+											"value": "we23545",
+											"disabled": true
+										},
+										{
+											"key": "nom",
+											"value": "Banane",
+											"disabled": true
+										},
+										{
+											"key": "description",
+											"value": "poirier",
+											"disabled": true
+										},
+										{
+											"key": "prix",
+											"value": "24.76"
+										}
+									]
+								},
+								"description": "Fait une recherche sur les produis"
+							},
+							"response": []
+						},
+						{
+							"name": "Get produit par id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/produits/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"produits",
+										"1"
+									]
+								},
+								"description": "Retourne un produit via son id"
+							},
+							"response": []
+						},
+						{
+							"name": "Ajouter un produit",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"serial\": \"fgd54\",\r\n    \"nom\": \"carotte\",\r\n    \"description\": \"pas un jouet\",\r\n    \"prix\": 1.23,\r\n    \"qte_inventaire\": 50,\r\n    \"categorie\": { \"id\": 1}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/produits",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"produits"
+									]
+								},
+								"description": "Ajoute un produit. Tous les champs doivent y être."
+							},
+							"response": []
+						},
+						{
+							"name": "Modifier un produit",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"serial\": \"567ert\",\r\n    \"nom\": \"carotte\",\r\n    \"description\": \"pas un jouet sauf pour un bonhomme de neige\",\r\n    \"prix\": 1.23,\r\n    \"qte_inventaire\": 50,\r\n    \"categorie\": { \"id\": 1}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/produits/3",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"produits",
+										"3"
+									]
+								},
+								"description": "Modifie le produit ayant l'id fourni. On peut mettre seulement les champs qui changent"
+							},
+							"response": []
+						},
+						{
+							"name": "Effacer un produit",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/produits/3",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"produits",
+										"3"
+									]
+								},
+								"description": "Efface un produit selon son ID"
+							},
+							"response": []
+						}
+					],
+					"description": "Requêtes du point de vue d'un admin. Il faut se connecter en tant qu'un admin(voir la section Connexion) puis mettre le token retourné dans le fichier des variables d'environnement (dans le menu Environments à gauche). La valeur va dans la case valeur actuelle de la variable token admin",
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "{{token_admin}}",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				}
+			],
+			"description": "Liste des requêtes concernant les produits",
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Connexion",
+			"item": [
+				{
+					"name": "Connexion client",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"courriel\": \"aaa@bbb.com\",\r\n    \"mdp\": \"a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/connexion",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"connexion"
+							]
+						},
+						"description": "Exemple d'une requête pour un client"
+					},
+					"response": []
+				},
+				{
+					"name": "Connexion admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"courriel\": \"admin@admin.com\",\r\n    \"mdp\": \"a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/connexion",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"connexion"
+							]
+						},
+						"description": "Voici les informations pour se connecter en temps qu'admin.\n\nC'est écrit en dur dans le code, pour simplifier le gestion. Ne jamais faire ça en vrai."
+					},
+					"response": []
+				}
+			],
+			"description": "Requêtes pour faire des connexions. On ne peut pas vraiment se déconnecter.\nLa connexion fonctionne selon un principe de token. À la connexion, un token est fourni. Ce token doit être passé avec chaque requête par la suite, dans une en-tête nommée Authorization. Le type est bearer.\nLe token expire automatiquement, ce qui fait office de déconnexion."
+		},
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "Client",
+					"item": [
+						{
+							"name": "Panier",
+							"item": [
+								{
+									"name": "Recupere le panier d'un client",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/clients/1/panier",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"clients",
+												"1",
+												"panier"
+											]
+										},
+										"description": "Un client peu seulement récupérer son propre panier"
+									},
+									"response": []
+								},
+								{
+									"name": "Ajoute un produit dans le panier",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"idProduit\": 1,\r\n    \"quantite\": 4\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/clients/1/panier",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"clients",
+												"1",
+												"panier"
+											]
+										},
+										"description": "On peut seulement ajouter un item dans son propre panier"
+									},
+									"response": []
+								},
+								{
+									"name": "Recupère un item du panier",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/clients/1/panier/0",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"clients",
+												"1",
+												"panier",
+												"0"
+											]
+										},
+										"description": "On peut seulement récupérer un item à partir de son propre panier"
+									},
+									"response": []
+								},
+								{
+									"name": "Modifie la quantité d'un item du panier",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"quantite\": -5\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/clients/1/panier/0",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"clients",
+												"1",
+												"panier",
+												"0"
+											]
+										},
+										"description": "On peut seulement modifier la quantité d'un item dans son propre panier"
+									},
+									"response": []
+								},
+								{
+									"name": "Retire un item du panier",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/clients/1/panier/0",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"clients",
+												"1",
+												"panier",
+												"0"
+											]
+										},
+										"description": "On peut seulement retirer un item de son propre panier"
+									},
+									"response": []
+								}
+							],
+							"description": "Requête touchant au panier d'un client, du point de vue d'un client."
+						},
+						{
+							"name": "Récupérer tous les clients",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/clients",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"clients"
+									]
+								},
+								"description": "Admin seulement"
+							},
+							"response": []
+						},
+						{
+							"name": "Récupérer un client",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/clients/2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"clients",
+										"2"
+									]
+								},
+								"description": "Fonctionne seulement si on récupère ses propres informations"
+							},
+							"response": []
+						},
+						{
+							"name": "Ajouter un client",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"prenom\": \"Mathias\",\r\n    \"nom\": \"Thomas\",\r\n    \"age\": 18,\r\n    \"adresse\": \"1 rue de terre\",\r\n    \"pays\": \"Canada\",\r\n    \"courriel\": \"qwer@tyu.com\",\r\n    \"mdp\": \"mot de passe\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/clients",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"clients"
+									]
+								},
+								"description": "Ajoute un client. Aucune restriction d'accès. Tous les champs doivent être là"
+							},
+							"response": []
+						},
+						{
+							"name": "Modifie un client",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"prenom\": \"Mathias34\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/clients/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"clients",
+										"1"
+									]
+								},
+								"description": "On peut seulement se modifier sois-même"
+							},
+							"response": []
+						},
+						{
+							"name": "Efface un client",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/clients/2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"clients",
+										"2"
+									]
+								},
+								"description": "On peut seulement s'effacer sois-même."
+							},
+							"response": []
+						}
+					],
+					"description": "Requêtes du point de vue d'une client",
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "{{token_client}}",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Admin",
+					"item": [
+						{
+							"name": "Panier",
+							"item": [
+								{
+									"name": "Recupere le panier d'un client",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/clients/3/panier",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"clients",
+												"3",
+												"panier"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Ajoute un produit dans le panier",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"idProduit\": 1,\r\n    \"quantite\": 4\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/clients/3/panier",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"clients",
+												"3",
+												"panier"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Recupère un item du panier",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/clients/3/panier/0",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"clients",
+												"3",
+												"panier",
+												"0"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Modifie la quantité d'un item du panier",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"quantite\": -5\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/clients/3/panier/0",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"clients",
+												"3",
+												"panier",
+												"0"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Retire un item du panier",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/clients/3/panier/0",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"clients",
+												"3",
+												"panier",
+												"0"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Récupérer tous les clients",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/clients",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"clients"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Récupérer un client",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/clients/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"clients",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Ajouter un client",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"prenom\": \"Charles\",\r\n    \"nom\": \"De Provence\",\r\n    \"age\": 54,\r\n    \"adresse\": \"45 rue de pelouse\",\r\n    \"pays\": \"Canada\",\r\n    \"courriel\": \"asdf@erds.com\",\r\n    \"mdp\": \"mot de passe\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/clients",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"clients"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modifie un client",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"prenom\": \"Grenadier Charles\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/clients/3",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"clients",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Efface un client",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/clients/3",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"clients",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Même requêtes, mais du point de vue d'un admin. Un admin peut tout faire",
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "{{token_admin}}",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				}
+			],
+			"description": "Liste des requêtes concernant un client"
+		},
+		{
+			"name": "Vente",
+			"item": [
+				{
+					"name": "Client",
+					"item": [
+						{
+							"name": "Recupère toutes les ventes",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/ventes",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"ventes"
+									]
+								},
+								"description": "Admin seulement"
+							},
+							"response": []
+						},
+						{
+							"name": "Ajoute une vente",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idClient\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/ventes",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"ventes"
+									]
+								},
+								"description": "S'utilise pour convertir son propre panier en un vente. Fait disparaitre notre panier, mais ajoute la vente à notre historique"
+							},
+							"response": []
+						},
+						{
+							"name": "Récupère une vente",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/ventes/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"ventes",
+										"1"
+									]
+								},
+								"description": "Admin seulement"
+							},
+							"response": []
+						},
+						{
+							"name": "Modifie une vente",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status\": \"prepare\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/ventes/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"ventes",
+										"1"
+									]
+								},
+								"description": "Admin seulement"
+							},
+							"response": []
+						},
+						{
+							"name": "Annule un vente",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idClient\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/ventes/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"ventes",
+										"1"
+									]
+								},
+								"description": "Seulement possible pour sois-même et seulement si la vente n'a pas été préparée"
+							},
+							"response": []
+						}
+					],
+					"description": "Ventes du point de vue d'un client",
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "{{token_client}}",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Admin",
+					"item": [
+						{
+							"name": "Recupère toutes les ventes",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/ventes?client=1&depuis=2021-01-01&status=reçue",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"ventes"
+									],
+									"query": [
+										{
+											"key": "client",
+											"value": "1"
+										},
+										{
+											"key": "depuis",
+											"value": "2021-01-01"
+										},
+										{
+											"key": "status",
+											"value": "reçue"
+										}
+									]
+								},
+								"description": "Récupère toutes les ventes. Peut retourner une liste filtrée selon le status et/ou la date et/ou le id du client qui a fait la requête"
+							},
+							"response": []
+						},
+						{
+							"name": "Ajoute une vente",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idClient\": 3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/ventes",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"ventes"
+									]
+								},
+								"description": "Converti le panier du client passé dans le corps en vente"
+							},
+							"response": []
+						},
+						{
+							"name": "Récupère une vente",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/ventes/5",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"ventes",
+										"5"
+									]
+								},
+								"description": "Retourne les informations sur une vente"
+							},
+							"response": []
+						},
+						{
+							"name": "Modifie une vente",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status\": \"prepare\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/ventes/5",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"ventes",
+										"5"
+									]
+								},
+								"description": "Modifie le status d'un vente. Seuls les status retourné par la requête de /statusCommande sont acceptés\n\nOn peut se servir de cette requête pour indiquée que la requête a été préparée dans l'entrepôt."
+							},
+							"response": []
+						},
+						{
+							"name": "Annule un vente",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idClient\": 3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/ventes/5",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"ventes",
+										"5"
+									]
+								},
+								"description": "Annule une vente, seulement si elle n'a pas été préparée"
+							},
+							"response": []
+						}
+					],
+					"description": "Ventes du point de vue d'un admin",
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "{{token_admin}}",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				}
+			],
+			"description": "Requêtes touchant à l'aspect vente"
+		}
+	]
+}

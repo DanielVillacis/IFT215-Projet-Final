@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "nom": "Prunier",
+        "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
+    },
+    {
+        "id": 2,
+        "nom": "Banane",
+        "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
+    }
+]
