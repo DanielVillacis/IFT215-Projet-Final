@@ -66,3 +66,5 @@ function itemPanier_to_html(item) {
 
 $(function () {
 });
+
+// test new branch
