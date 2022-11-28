@@ -270,6 +270,13 @@ form .group select{
     color: #fff;
     cursor: pointer;
 }
+#login-form input[type=button] {
+    border: 0;
+    padding: 15px;
+    background: #5b77bd;
+    color: #fff;
+    cursor: pointer;
+}
 * {
     font-family: arial, sans-serif;
     box-sizing: border-box;

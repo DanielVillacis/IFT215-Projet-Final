@@ -1,5 +1,3 @@
-
-
 function verifielogin(COURRIEL_CLIENT,COURRIEL_MDP) {
 
     $.ajax({
@@ -14,19 +12,11 @@ function verifielogin(COURRIEL_CLIENT,COURRIEL_MDP) {
             sessionStorage.setItem('tokenclient',TOKEN_CLIENT);
             const mode = sessionStorage.getItem('idclient');
 
-
-            connexion = $('<a href="#/logout"><img src="images/logout.png"  class="padding "alt="Se connecter" width="70"/></a><a href="#/panier" class=""><button type="button" class="btn btn-primary position-relative"><i class="bi bi-cart-plus"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="item_counter"></span></button></a>')
-
+            connexion = $('<img src="images/logout.png" onclick="deconnexion()" class="padding "alt="Se connecter" width="70"/></a><a href="#/panier" class=""><button type="button" class="btn btn-primary position-relative"><i class="bi bi-cart-plus"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="item_counter"></span></button></a>')
 
             $('#login').replaceWith(connexion);
 
-
-
-
-
-
-
-            window.location.href = "#/produit";
+            window.location.replace("#/produit");
         },
         error: function (result) {
             alert("Mauvaise combinaison");
@@ -40,6 +30,24 @@ function chargerlogin() {
     let COURRIEL_MDP = document.getElementById("client_mdp").value;
     if (COURRIEL_CLIENT)
         verifielogin(COURRIEL_CLIENT,COURRIEL_MDP);
+}
+
+function deconnexion() {
+    console.log(sessionStorage.getItem('idclient'));
+
+    $.ajax({
+        url: "/connexion/"+1,
+        method:"DELETE",
+        success: function (result) {
+            console.log(result);
+
+
+        },
+    });
+    sessionStorage.setItem('idclient',undefined);
+    sessionStorage.setItem('tokenclient',undefined);
+    console.log(sessionStorage.getItem('idclient'));
+    window.location.href = "#/login"
 }
 
 

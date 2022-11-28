@@ -44,7 +44,7 @@
         "nom": "carrote",
         "description": "une legume orange",
         "prix": 1.89,
-        "qte_inventaire": 98,
+        "qte_inventaire": 96,
         "categorie": {
             "id": 1,
             "nom": "Prunier",
