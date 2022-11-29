@@ -57,8 +57,9 @@ function itemPanier_to_html(item) {
     let prixTotal = pTotal.toFixed(2);
     item_panier = $('<tr></tr>')
         .append('<td>' + item.nomProduit + '</td>')
-        .append('<td>' + item.prix + '</td>')
+        .append('<td>' + item.descriptionProduit + '</td>')
         .append('<td>' + item.quantite + '</td>')
+        .append('<td>' + item.prix + '</td>')
         .append('<td>'+ prixTotal + '</td>');
 
     return $(item_panier);
