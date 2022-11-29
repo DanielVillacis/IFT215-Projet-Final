@@ -10,11 +10,19 @@ function verifielogin(COURRIEL_CLIENT,COURRIEL_MDP) {
             TOKEN_CLIENT = result.token;
             sessionStorage.setItem('idclient',ID_CLIENT);
             sessionStorage.setItem('tokenclient',TOKEN_CLIENT);
-            const mode = sessionStorage.getItem('idclient');
+            $.ajax({
+                url: "/clients/"+ID_CLIENT,
+                    beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+TOKEN_CLIENT );},
+                success: function( result ) {
+                    console.log(result.prenom);
+                    PRENOM_CLIENT = result.prenom;
+                    sessionStorage.setItem('prenom',PRENOM_CLIENT);
+                }
+            });
+            loginheader = $('<div id="login"></div>')
 
-            connexion = $('<img src="images/logout.png" onclick="deconnexion()" class="padding "alt="Se connecter" width="70"/></a><a href="#/panier" class=""><button type="button" class="btn btn-primary position-relative"><i class="bi bi-cart-plus"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="item_counter"></span></button></a>')
-
-            $('#login').replaceWith(connexion);
+                .append('Bonjour '+sessionStorage.getItem('prenom')+' '+'<img src="images/logout.png" onclick="deconnexion()" style="cursor: pointer;" class="padding "alt="Se déconnecter" width="70" title="Se déconnecter"/></a><a href="#/panier" class=""><button type="button" class="btn btn-primary position-relative"><i class="bi bi-cart-plus"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="item_counter"></span></button></a>')
+            $('#login').replaceWith(loginheader);
 
             window.location.replace("#/produit");
         },
@@ -41,9 +49,12 @@ function deconnexion() {
         success: function (result) {
             console.log(result);
 
-
         },
     });
+    loginheader = $('<div id="login"></div>')
+        .append('<img src="images/login.png" onclick="chargerlogin()" style="cursor: pointer;" class="padding "alt="Se connecter" width="70"/></a><a href="#/panier" class=""><button type="button" class="btn btn-primary position-relative"><i class="bi bi-cart-plus"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="item_counter"></span></button></a>');
+    $('#login').replaceWith(loginheader);
+
     sessionStorage.setItem('idclient',undefined);
     sessionStorage.setItem('tokenclient',undefined);
     console.log(sessionStorage.getItem('idclient'));
@@ -52,4 +63,16 @@ function deconnexion() {
 
 
 $(function () {
+    console.log(sessionStorage.getItem('idclient'));
+
+    if (sessionStorage.getItem('idclient') != undefined) {
+        loginheader = $('<div id="login"></div>')
+            .append('<img src="images/logout.png" onclick="deconnexion()" style="cursor: pointer;" class="padding "alt="Se connecter" width="70" title="Se déconnecter"/></a><a href="#/panier" class=""><button type="button" class="btn btn-primary position-relative"><i class="bi bi-cart-plus"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="item_counter"></span></button></a>');
+        $('#login').replaceWith(loginheader);
+    }
+    else {
+        loginheader = $('<div id="login"></div>')
+            .append('<img src="images/login.png" onclick="chargerlogin()" style="cursor: pointer;" class="padding "alt="Se connecter" width="70" title="Se connecter"/></a><a href="#/panier" class=""><button type="button" class="btn btn-primary position-relative"><i class="bi bi-cart-plus"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="item_counter"></span></button></a>');
+        $('#login').replaceWith(loginheader);
+    }
 });

@@ -26,10 +26,10 @@ function item_to_html(item) {
 
 function add_item(id_item){
     $.ajax({
-        url: "/clients/"+1+"/panier",
+        url: "/clients/"+sessionStorage.getItem('idclient')+"/panier",
         method:"POST",
         data: {"idProduit": id_item, "quantite": 1},
-        beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZENsaWVudCI6MSwicm9sZSI6ImNsaWVudCIsImlhdCI6MTYzNjc1MjI1MywiZXhwIjoxODM2NzUyMjUzfQ.qMcKC0NeuVseNSeGtyaxUvadutNAfzxlhL5LYPsRB8k' );},
+        beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+sessionStorage.getItem('tokenclient'));},
         success: function( result ) {
             $('#item_counter').text(result.items.length);
         }
@@ -38,8 +38,8 @@ function add_item(id_item){
 
 function chargerpanier() {
     $.ajax({
-        url: "/clients/"+1+"/panier",
-        beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZENsaWVudCI6MSwicm9sZSI6ImNsaWVudCIsImlhdCI6MTYzNjc1MjI1MywiZXhwIjoxODM2NzUyMjUzfQ.qMcKC0NeuVseNSeGtyaxUvadutNAfzxlhL5LYPsRB8k' );},
+        url: "/clients/"+sessionStorage.getItem('idclient')+"/panier",
+        beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+sessionStorage.getItem('tokenclient')) ;},
         success: function( result ) {
             console.log(result);console.log(result.items);
             $.each(result.items, function (key, value) {
