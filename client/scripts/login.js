@@ -19,8 +19,8 @@ function verifielogin(COURRIEL_CLIENT,COURRIEL_MDP) {
                     sessionStorage.setItem('prenom',PRENOM_CLIENT);
                 }
             });
+            console.log(sessionStorage.getItem('prenom'));
             loginheader = $('<div id="login"></div>')
-
                 .append('Bonjour '+sessionStorage.getItem('prenom')+' '+'<img src="images/logout.png" onclick="deconnexion()" style="cursor: pointer;" class="padding "alt="Se déconnecter" width="70" title="Se déconnecter"/></a><a href="#/panier" class=""><button type="button" class="btn btn-primary position-relative"><i class="bi bi-cart-plus"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="item_counter"></span></button></a>')
             $('#login').replaceWith(loginheader);
 
@@ -61,18 +61,18 @@ function deconnexion() {
     window.location.href = "#/login"
 }
 
-
 $(function () {
     console.log(sessionStorage.getItem('idclient'));
 
-    if (sessionStorage.getItem('idclient') != undefined) {
+    if ((sessionStorage.getItem('idclient') === 'undefined')) {
         loginheader = $('<div id="login"></div>')
-            .append('<img src="images/logout.png" onclick="deconnexion()" style="cursor: pointer;" class="padding "alt="Se connecter" width="70" title="Se déconnecter"/></a><a href="#/panier" class=""><button type="button" class="btn btn-primary position-relative"><i class="bi bi-cart-plus"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="item_counter"></span></button></a>');
+            .append('<img src="images/login.png" onclick="deconnexion()" style="cursor: pointer;" class="padding "alt="Se connecter" width="70" title="Se connecter"/></a><a href="#/panier" class=""><button type="button" class="btn btn-primary position-relative"><i class="bi bi-cart-plus"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="item_counter"></span></button></a>');
         $('#login').replaceWith(loginheader);
     }
     else {
         loginheader = $('<div id="login"></div>')
-            .append('<img src="images/login.png" onclick="chargerlogin()" style="cursor: pointer;" class="padding "alt="Se connecter" width="70" title="Se connecter"/></a><a href="#/panier" class=""><button type="button" class="btn btn-primary position-relative"><i class="bi bi-cart-plus"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="item_counter"></span></button></a>');
+
+            .append('<img src="images/logout.png" onclick="deconnexion()" style="cursor: pointer;" class="padding "alt="Se déconnecter" width="70" title="Se déconnecter"/></a><a href="#/panier" class=""><button type="button" class="btn btn-primary position-relative"><i class="bi bi-cart-plus"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="item_counter"></span></button></a>');
         $('#login').replaceWith(loginheader);
     }
 });

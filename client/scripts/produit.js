@@ -37,21 +37,26 @@ function add_item(id_item){
 }
 
 function chargerpanier() {
-    $.ajax({
-        url: "/clients/"+sessionStorage.getItem('idclient')+"/panier",
-        beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+sessionStorage.getItem('tokenclient')) ;},
-        success: function( result ) {
-            console.log(result);console.log(result.items);
-            $.each(result.items, function (key, value) {
-                item = itemPanier_to_html(value);
-                $('#list_items').append(item);
-            });
-            grand_total = $('<td></td><td></td><td style=text-align:right;"><strong>Grand total : </strong></td><td><strong>' + result.valeur +' </strong></td>')
-            $('#grand_total').append(grand_total);
-        }
-    });
+    if (sessionStorage.getItem('idclient') === 'undefined') {
+        alert("Vous devez vous connecter pour accéder au panier");
+        deconnexion();
+    }
+    else {
+        $.ajax({
+            url: "/clients/"+sessionStorage.getItem('idclient')+"/panier",
+            beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+sessionStorage.getItem('tokenclient')) ;},
+            success: function( result ) {
+                console.log(result);console.log(result.items);
+                $.each(result.items, function (key, value) {
+                    item = itemPanier_to_html(value);
+                    $('#list_items').append(item);
+                });
+                grand_total = $('<td></td><td></td><td style=text-align:right;"><strong>Grand total : </strong></td><td><strong>' + result.valeur +' </strong></td>')
+                $('#grand_total').append(grand_total);
+            }
+        });
+    }
 }
-
 function itemPanier_to_html(item) {
     let pTotal = item.prix * item.quantite;
     let prixTotal = pTotal.toFixed(2);
