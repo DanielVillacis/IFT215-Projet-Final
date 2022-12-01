@@ -229,9 +229,8 @@ form .group select{
     margin: 5% 10% 5% auto;
 }
 
-#list_items-qte-value{
-    margin-left: 10%;
-    align-self: center;
+#boutons-panier{
+    text-align: right;
 }
 
 #pdv-grille {
