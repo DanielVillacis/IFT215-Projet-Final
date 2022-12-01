@@ -26,10 +26,10 @@ function item_to_html(item) {
 
 function add_item(id_item){
     $.ajax({
-        url: "/clients/"+sessionStorage.getItem('idclient')+"/panier",
+        url: "/clients/"+localStorage.getItem('idclient')+"/panier",
         method:"POST",
         data: {"idProduit": id_item, "quantite": 1},
-        beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+sessionStorage.getItem('tokenclient'));},
+        beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+localStorage.getItem('tokenclient'));},
         success: function( result ) {
             $('#item_counter').text(result.items.length);
         }
@@ -37,14 +37,14 @@ function add_item(id_item){
 }
 
 function chargerpanier() {
-    if (sessionStorage.getItem('idclient') === 'undefined') {
+    if (localStorage.getItem('idclient') === 'undefined') {
         swal("Vous devez vous connecter pour accéder au panier!", "veuillez vous connecter!", "error");
         window.location.replace("#/login");
     }
     else {
         $.ajax({
-            url: "/clients/"+sessionStorage.getItem('idclient')+"/panier",
-            beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+sessionStorage.getItem('tokenclient')) ;},
+            url: "/clients/"+localStorage.getItem('idclient')+"/panier",
+            beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+localStorage.getItem('tokenclient')) ;},
             success: function( result ) {
                 console.log(result);console.log(result.items);
                 $.each(result.items, function (key, value) {
