@@ -9,49 +9,8 @@
         "courriel": "aaa@bbb.com",
         "mdp": "$2b$08$CEfAuisfWI/driqC4REyfOo/y8RG0g1dw7ngClRLBk1QANEs.U53u",
         "panier": {
-            "valeur": 141.75,
-            "items": [
-                {
-                    "id": 0,
-                    "idProduit": 1,
-                    "nomProduit": "Tomate",
-                    "descriptionProduit": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
-                    "prix": 24.76,
-                    "quantite": 3
-                },
-                {
-                    "id": 1,
-                    "idProduit": 2,
-                    "nomProduit": "concombre",
-                    "descriptionProduit": "pas un jouet",
-                    "prix": 2.23,
-                    "quantite": 6
-                },
-                {
-                    "id": 2,
-                    "idProduit": 3,
-                    "nomProduit": "carrote",
-                    "descriptionProduit": "une legume orange",
-                    "prix": 1.89,
-                    "quantite": 2
-                },
-                {
-                    "id": 3,
-                    "idProduit": 6,
-                    "nomProduit": "orange",
-                    "descriptionProduit": "un fruit de couleur orange",
-                    "prix": 0.79,
-                    "quantite": 1
-                },
-                {
-                    "id": 4,
-                    "idProduit": 0,
-                    "nomProduit": "Banane",
-                    "descriptionProduit": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
-                    "prix": 24.76,
-                    "quantite": 2
-                }
-            ]
+            "valeur": 0,
+            "items": []
         },
         "historique": [
             {
@@ -85,6 +44,46 @@
         "panier": {
             "valeur": 0,
             "items": []
+        },
+        "historique": []
+    },
+    {
+        "id": 3,
+        "prenom": "Carlos",
+        "nom": "Reyes",
+        "age": 26,
+        "adresse": "asd",
+        "pays": "asd",
+        "courriel": "carlos@gmail.com",
+        "mdp": "$2b$08$YbOo54jemVmxWgJtvgsn1ODgcibNSyrFx0fsfdxh0jTNEaaXY5hrW",
+        "panier": {
+            "valeur": 5.800000000000001,
+            "items": [
+                {
+                    "id": 0,
+                    "idProduit": 1,
+                    "nomProduit": "Tomate",
+                    "descriptionProduit": "Reconnue à sa silhouette mince et oblongue, la tomate Roma, ou tomate prune, possède une peau épaisse et une texture charnue. Comme elle est sucrée et contient peu de graines, elle constitue un choix populaire pour la préparation de sauces et de pâte de tomate. On la consomme également fraîche encore grillée dans les lasagnes ou autres plats de pâtes.",
+                    "prix": 1.06,
+                    "quantite": 1
+                },
+                {
+                    "id": 1,
+                    "idProduit": 0,
+                    "nomProduit": "Banane",
+                    "descriptionProduit": "La banane mesure entre 15 et 25 cm (6 et 9 po) de longueur et sa couleur verte indique qu’elle n’est pas encore mûre. Elle est à son meilleur lorsque sa peau devient jaune et se parsème de taches foncées.",
+                    "prix": 2.25,
+                    "quantite": 1
+                },
+                {
+                    "id": 2,
+                    "idProduit": 2,
+                    "nomProduit": "Concombre",
+                    "descriptionProduit": "Le concombre est un fruit cylindrique à peau verte et à chair blanche croquante parsemée de graines comestibles. On le mange généralement cru, avec ou sans la peau. Ajoutez-en quelques tranches sur un plateau de légumes ou savourez-le en salade avec de la menthe et du jus de citron.",
+                    "prix": 2.49,
+                    "quantite": 1
+                }
+            ]
         },
         "historique": []
     }

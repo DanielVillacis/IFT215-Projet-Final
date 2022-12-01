@@ -3,9 +3,9 @@
         "id": 0,
         "serial": "we23545",
         "nom": "Banane",
-        "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
-        "prix": 24.76,
-        "qte_inventaire": 162,
+        "description": "La banane mesure entre 15 et 25 cm (6 et 9 po) de longueur et sa couleur verte indique qu’elle n’est pas encore mûre. Elle est à son meilleur lorsque sa peau devient jaune et se parsème de taches foncées.",
+        "prix": 2.25,
+        "qte_inventaire": 129,
         "categorie": {
             "id": 1,
             "nom": "Prunier",
@@ -16,22 +16,22 @@
         "id": 1,
         "serial": "we23545",
         "nom": "Tomate",
-        "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
-        "prix": 24.76,
-        "qte_inventaire": 38,
+        "description": "Reconnue à sa silhouette mince et oblongue, la tomate Roma, ou tomate prune, possède une peau épaisse et une texture charnue. Comme elle est sucrée et contient peu de graines, elle constitue un choix populaire pour la préparation de sauces et de pâte de tomate. On la consomme également fraîche encore grillée dans les lasagnes ou autres plats de pâtes.",
+        "prix": 1.06,
+        "qte_inventaire": 20,
         "categorie": {
             "id": 2,
-            "nom": "Banane",
+            "nom": "Tomate",
             "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
         }
     },
     {
         "id": 2,
         "serial": "sdfds",
-        "nom": "concombre",
-        "description": "pas un jouet",
-        "prix": 2.23,
-        "qte_inventaire": 44,
+        "nom": "Concombre",
+        "description": "Le concombre est un fruit cylindrique à peau verte et à chair blanche croquante parsemée de graines comestibles. On le mange généralement cru, avec ou sans la peau. Ajoutez-en quelques tranches sur un plateau de légumes ou savourez-le en salade avec de la menthe et du jus de citron.",
+        "prix": 2.49,
+        "qte_inventaire": 28,
         "categorie": {
             "id": 1,
             "nom": "Prunier",
