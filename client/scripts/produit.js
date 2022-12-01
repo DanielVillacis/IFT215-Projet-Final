@@ -26,10 +26,10 @@ function item_to_html(item) {
 
 function add_item(id_item){
     $.ajax({
-        url: "/clients/"+1+"/panier",
+        url: "/clients/"+sessionStorage.getItem('idclient')+"/panier",
         method:"POST",
         data: {"idProduit": id_item, "quantite": 1},
-        beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZENsaWVudCI6MSwicm9sZSI6ImNsaWVudCIsImlhdCI6MTYzNjc1MjI1MywiZXhwIjoxODM2NzUyMjUzfQ.qMcKC0NeuVseNSeGtyaxUvadutNAfzxlhL5LYPsRB8k' );},
+        beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+sessionStorage.getItem('tokenclient'));},
         success: function( result ) {
             $('#item_counter').text(result.items.length);
         }
@@ -37,19 +37,25 @@ function add_item(id_item){
 }
 
 function chargerpanier() {
-    $.ajax({
-        url: "/clients/"+1+"/panier",
-        beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZENsaWVudCI6MSwicm9sZSI6ImNsaWVudCIsImlhdCI6MTYzNjc1MjI1MywiZXhwIjoxODM2NzUyMjUzfQ.qMcKC0NeuVseNSeGtyaxUvadutNAfzxlhL5LYPsRB8k' );},
-        success: function( result ) {
-            console.log(result);console.log(result.items);
-            $.each(result.items, function (key, value) {
-                item = itemPanier_to_html(value);
-                $('#list_items').append(item);
-            });
-            grand_total = $('<td></td><td></td><td style=text-align:right;"><strong>Grand total : </strong></td><td><strong>' + result.valeur.toFixed(2) +' </strong></td>')
-            $('#grand_total').append(grand_total);
-        }
-    });
+    if (sessionStorage.getItem('idclient') === 'undefined') {
+        swal("Vous devez vous connecter pour accéder au panier!", "veuillez vous connecter!", "error");
+        window.location.replace("#/login");
+    }
+    else {
+        $.ajax({
+            url: "/clients/"+sessionStorage.getItem('idclient')+"/panier",
+            beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+sessionStorage.getItem('tokenclient')) ;},
+            success: function( result ) {
+                console.log(result);console.log(result.items);
+                $.each(result.items, function (key, value) {
+                    item = itemPanier_to_html(value);
+                    $('#list_items').append(item);
+                });
+                grand_total = $('<td></td><td></td><td style=text-align:right;"><strong>Grand total : </strong></td><td><strong>' + result.valeur +' </strong></td>')
+                $('#grand_total').append(grand_total);
+            }
+        });
+    }
 }
 
 function remove_item(id_item){
@@ -75,6 +81,7 @@ function remove_product(id_item){
         }
     });
 }
+
 
 function itemPanier_to_html(item) {
     let pTotal = item.prix * item.quantite;

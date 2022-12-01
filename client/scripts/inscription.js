@@ -1,27 +1,35 @@
-function menuGaucheClic(lien){
-    let menu = document.getElementById('menu-gauche');
-    let liens = menu.children;
-    for (let i = 0 ; i<liens.length ; i++){
-        liens[i].classList.remove("choisi")
+function inscription() {
+
+    let Prenom = document.getElementById("prenom").value;
+    let Nom = document.getElementById("nom").value;
+    let Age = document.getElementById("age").value;
+    let Adresse = document.getElementById("adresse").value;
+    let Pays = document.getElementById("pays").value;
+    let Courriel = document.getElementById("courriel").value;
+    let Mdp = document.getElementById("mot-de-passe").value;
+    let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+    if (isNaN(Age))
+        swal("Vérifier le champs Age", "Il doit être numérique", "error");
+    if (!(Courriel.match(validRegex)))
+        swal("Vérifier le champs Courriel", "il doit sous la forme exemple@test.com", "error");
+    if ((Prenom == '') || (Nom == '') || (Age == '') || (Adresse == '') || (Pays == '') || (Mdp == '')) {
+        swal("Il manque des champs", "veuillez completer le formulaire", "error");
     }
-    lien.classList.add("choisi");
+
+    $.ajax({
+        url: "/clients",
+        method:"POST",
+        data: {"prenom": Prenom, "nom": Nom, "age": Age, "adresse": Adresse, "pays": Pays, "courriel": Courriel, "mdp": Mdp},
+        success: function (result) {
+            console.log(result);
+            swal("Inscription réussie", "Vous pouvez vous connecter!", "success");
+            window.location.replace("#/login");
+        }
+    });
 }
 
-function attacherListenerMenuGauche(){
-    let menu = document.getElementById("menu-gauche");
-    let liens = menu.children;
-    for (let i = 0 ; i<liens.length ; i++){
-        liens[i].addEventListener('click', function(){
-            menuGaucheClic(liens[i])
-        });
-    }
-}
+$(function () {
 
-/**
- * Fonction qui initie le lancement des fonctions de ce script. Appelée par "chargerSousContenu" dans navigation.js.
- * Remplace le DOMContentLoaded qui est lancé bien avant que le contenu associé à ce script ne soit dans l'écran.
- * @returns {Promise<void>}
- */
-async function chargerinscription (){
-    attacherListenerMenuGauche()
-}
+
+});

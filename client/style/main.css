@@ -15,13 +15,32 @@ footer{
     clear: both;
 }
 
-nav{
-    text-align: center;
+.header {
+    height: 125px;
 }
+
+img {
+    padding-left: 20px;
+    float:left;
+}
+#login {
+    float:right;
+    padding: 40px;
+}
+img.padding {
+    padding-right: 10px;
+}
+
+nav{
+    text-align: left;
+
+}
+
 
 #menu-principal {
     background-color: var(--fond-menu, #000);
     padding-top: 4px;
+
 }
 
 .barre-menu {
@@ -136,9 +155,9 @@ form .group{
 
 form .group label{
     display: inline-block;
-    width: 45%;
+    width: 25%;
     margin-right: 5%;
-    text-align: right;
+    text-align: left;
 }
 
 form .group select{
@@ -151,9 +170,17 @@ form .group select{
 .submit-group input[type=submit]{
     width: 150px
 }
+.submit-group input[type=button]{
+    width: 250px;
+    border: 0;
+    padding: 15px;
+    background: #5b77bd;
+    color: #fff;
+    cursor: pointer;
+}
 .submit-group {
-    max-width: 500px;
-    text-align: right;
+
+    text-align: center;
     padding: 14px 0px 14px 28px;
 }
 
@@ -265,4 +292,36 @@ form .group select{
     text-align: center;
 }
 
-
+#login-form {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fafafa;
+    border: 1px solid #ccc;
+}
+#login-form h1 {
+    margin: 0 0 20px 0;
+}
+#login-form input {
+    width: 60%;
+    margin: 0 0 3px 0;
+    padding: 7px;
+}
+#login-form input[type=submit] {
+    border: 0;
+    padding: 15px;
+    background: #5b77bd;
+    color: #fff;
+    cursor: pointer;
+}
+#login-form input[type=button] {
+    border: 0;
+    padding: 15px;
+    background: #5b77bd;
+    color: #fff;
+    cursor: pointer;
+}
+* {
+    font-family: arial, sans-serif;
+    box-sizing: border-box;
+}
