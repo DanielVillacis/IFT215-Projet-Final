@@ -155,9 +155,9 @@ form .group{
 
 form .group label{
     display: inline-block;
-    width: 45%;
+    width: 25%;
     margin-right: 5%;
-    text-align: right;
+    text-align: left;
 }
 
 form .group select{
@@ -170,9 +170,17 @@ form .group select{
 .submit-group input[type=submit]{
     width: 150px
 }
+.submit-group input[type=button]{
+    width: 250px;
+    border: 0;
+    padding: 15px;
+    background: #5b77bd;
+    color: #fff;
+    cursor: pointer;
+}
 .submit-group {
-    max-width: 500px;
-    text-align: right;
+
+    text-align: center;
     padding: 14px 0px 14px 28px;
 }
 
@@ -249,7 +257,7 @@ form .group select{
 }
 
 #login-form {
-    max-width: 400px;
+    max-width: 480px;
     margin: 0 auto;
     padding: 20px;
     background: #fafafa;
@@ -259,9 +267,9 @@ form .group select{
     margin: 0 0 20px 0;
 }
 #login-form input {
-    width: 100%;
-    margin: 0 0 20px 0;
-    padding: 10px;
+    width: 60%;
+    margin: 0 0 3px 0;
+    padding: 7px;
 }
 #login-form input[type=submit] {
     border: 0;

@@ -38,8 +38,8 @@ function add_item(id_item){
 
 function chargerpanier() {
     if (sessionStorage.getItem('idclient') === 'undefined') {
-        alert("Vous devez vous connecter pour accéder au panier");
-        deconnexion();
+        swal("Vous devez vous connecter pour accéder au panier!", "veuillez vous connecter!", "error");
+        window.location.replace("#/login");
     }
     else {
         $.ajax({

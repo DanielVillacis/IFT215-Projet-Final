@@ -1,8 +1,8 @@
 <h1 id="para-1" class="centrer">Inscription au Pro-Gramme</h1>
 
-<section id="section-inscription">
+<section class="mt-2 container">
     <form method="post">
-        <fieldset id="#renseignement-auth">
+        <fieldset id="login-form">
 
             <div class="group">
                 <label for="prenom">Prénom</label>
@@ -25,8 +25,8 @@
                 <input type="text" name="pays" id="pays" required/>
             </div>
             <div class="group">
-                <label for="courriel">Adresse courriel</label>
-                <input type="email" name="courriel" id="courriel" required/>
+                <label for="courriel">Courriel</label>
+                <input type="email" name="courriel" id="courriel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" required/>
             </div>
             <div class="group">
                 <label for="mot-de-passe">Mot de passe</label>
@@ -35,7 +35,7 @@
         </fieldset>
 
         <div class="group submit-group">
-            <input type="button" value="S'inscrire" onclick="inscription()"/>
+            <input type="button" value="S'inscrire" id='button-send' onclick="inscription()"/>
         </div>
     </form>
 </section>
