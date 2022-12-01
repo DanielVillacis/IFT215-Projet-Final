@@ -46,8 +46,32 @@ function chargerpanier() {
                 item = itemPanier_to_html(value);
                 $('#list_items').append(item);
             });
-            grand_total = $('<td></td><td></td><td style=text-align:right;"><strong>Grand total : </strong></td><td><strong>' + result.valeur +' </strong></td>')
+            grand_total = $('<td></td><td></td><td style=text-align:right;"><strong>Grand total : </strong></td><td><strong>' + result.valeur.toFixed(2) +' </strong></td>')
             $('#grand_total').append(grand_total);
+        }
+    });
+}
+
+function remove_item(id_item){
+    $.ajax({
+        url: "/clients/"+1+"/panier/"+id_item,
+        method:"PUT",
+        data: {"quantite": -1},
+        beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZENsaWVudCI6MSwicm9sZSI6ImNsaWVudCIsImlhdCI6MTYzNjc1MjI1MywiZXhwIjoxODM2NzUyMjUzfQ.qMcKC0NeuVseNSeGtyaxUvadutNAfzxlhL5LYPsRB8k' );},
+        success: function( result ) {
+            $('#item_counter').text(result.items.length);
+        }
+    });
+}
+
+function remove_product(id_item){
+    $.ajax({
+        url: "/clients/"+1+"/panier/"+id_item,
+        method:"DELETE",
+        data: {},
+        beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZENsaWVudCI6MSwicm9sZSI6ImNsaWVudCIsImlhdCI6MTYzNjc1MjI1MywiZXhwIjoxODM2NzUyMjUzfQ.qMcKC0NeuVseNSeGtyaxUvadutNAfzxlhL5LYPsRB8k' );},
+        success: function( result ) {
+            $('#item_counter').text(result.items.length);
         }
     });
 }
@@ -56,12 +80,11 @@ function itemPanier_to_html(item) {
     let pTotal = item.prix * item.quantite;
     let prixTotal = pTotal.toFixed(2);
     item_panier = $('<tr></tr>')
-        .append('<td>' + item.nomProduit + '</td>')
+        .append('<td>' + item.nomProduit + '<img src="images/produits/'+item.nomProduit+ '.png" alt="" height=100 width=100/>' +'</td>')
         .append('<td>' + item.descriptionProduit + '</td>')
-        .append('<td>' + item.quantite + '</td>')
+        .append('<td>' + '<div id="list_items-qte">' + '<div id="list_items-qte-value">' + item.quantite + '</div>' + '<div id="list_items-qte-btn">' +'<button type="button" id="qte_add" onclick="add_item('+item.idProduit+')">ˆ</button>' + '<button type="button" id="qte_remove" onclick="remove_item('+item.id+')"/>ˇ</button>' + '</div>' + '</div>' + '</td>')
         .append('<td>' + item.prix + '</td>')
-        .append('<td>'+ prixTotal + '</td>');
-
+        .append('<td>'+ '<button type="button" id="btn-qte-remove-product" onclick="remove_product('+item.id+')" >X</button>' + '</td>');
     return $(item_panier);
 }
 
