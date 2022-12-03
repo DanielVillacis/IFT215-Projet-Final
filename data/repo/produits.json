@@ -5,11 +5,11 @@
         "nom": "Banane",
         "description": "La banane mesure entre 15 et 25 cm (6 et 9 po) de longueur et sa couleur verte indique qu’elle n’est pas encore mûre. Elle est à son meilleur lorsque sa peau devient jaune et se parsème de taches foncées.",
         "prix": 2.25,
-        "qte_inventaire": 129,
+        "qte_inventaire": 130,
         "categorie": {
             "id": 1,
-            "nom": "Prunier",
-            "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
+            "nom": "Fruits et legumes",
+            "description": "Cette catérogie contient des fruits et legumes"
         }
     },
     {
@@ -21,8 +21,8 @@
         "qte_inventaire": 20,
         "categorie": {
             "id": 2,
-            "nom": "Tomate",
-            "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
+            "nom": "Fruits et legumes",
+            "description": "Cette catérogie contient des fruits et legumes"
         }
     },
     {
@@ -31,76 +31,76 @@
         "nom": "Concombre",
         "description": "Le concombre est un fruit cylindrique à peau verte et à chair blanche croquante parsemée de graines comestibles. On le mange généralement cru, avec ou sans la peau. Ajoutez-en quelques tranches sur un plateau de légumes ou savourez-le en salade avec de la menthe et du jus de citron.",
         "prix": 2.49,
-        "qte_inventaire": 28,
+        "qte_inventaire": 29,
         "categorie": {
             "id": 1,
-            "nom": "Prunier",
-            "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
+            "nom": "Fruits et legumes",
+            "description": "Cette catérogie contient des fruits et legumes"
         }
     },
     {
         "id": 3,
         "serial": "sdfds",
-        "nom": "carrote",
-        "description": "une legume orange",
-        "prix": 1.89,
+        "nom": "Carotte",
+        "description": "La silhouette svelte de la carotte peut s’habiller de bien d’autres couleurs que son orangé si caractéristique. Offerte à l’année, elle se mange crue ou s’apprête de mille et une façons : grillée au four, coupée puis attendrie dans les soupes ou autres plats lentement cuisinés, ou incorporée dans un délicieux gâteau au glaçage crémeux.",
+        "prix": 3.49,
         "qte_inventaire": 96,
         "categorie": {
             "id": 1,
-            "nom": "Prunier",
-            "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
+            "nom": "Fruits et legumes",
+            "description": "Cette catérogie contient des fruits et legumes"
         }
     },
     {
         "id": 4,
         "serial": "sdfds",
-        "nom": "orange",
-        "description": "un fruit de couleur orange",
-        "prix": 0.79,
+        "nom": "Orange",
+        "description": "L’orange navel possède une peau orange vif facile à peler et une pulpe sucrée sans pépins. Cette orange populaire, championne des collations, est également utilisée pour laquer le poulet, le canard et le porc.",
+        "prix": 1.92,
         "qte_inventaire": 40,
         "categorie": {
             "id": 1,
-            "nom": "Prunier",
-            "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
+            "nom": "Fruits et legumes",
+            "description": "Cette catérogie contient des fruits et legumes"
         }
     },
     {
         "id": 5,
         "serial": "sdfds",
-        "nom": "orange",
-        "description": "un fruit de couleur orange",
-        "prix": 0.79,
+        "nom": "Pomme",
+        "description": "La pomme Royal Gala, sucrée et croquante, présente des rayures rose-orangé sur un fond jaune. Juteuse et parfumée, elle se déguste davantage telle quelle. Savourez-la en tranches dans une salade avec du fromage bleu et des noix grillées.\n\n",
+        "prix": 1.39,
         "qte_inventaire": 40,
         "categorie": {
             "id": 1,
-            "nom": "Prunier",
-            "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
+            "nom": "Fruits et legumes",
+            "description": "Cette catérogie contient des fruits et legumes"
         }
     },
     {
         "id": 6,
         "serial": "sdfds",
-        "nom": "orange",
-        "description": "un fruit de couleur orange",
+        "nom": "Avocats",
+        "description": "L’avocat présente une peau rugueuse vert foncé à presque noir une fois bien mûr. Coupez-le en deux sur le sens de la longueur, retirez sa chair crémeuse - que vous arroserez de jus de citron pour l’empêcher de brunir - avant d’en faire un guacamole ou un smoothie. L’onctuosité de ce fruit au goût fin se marie bien aux salades ou aux sandwichs BLT.\n\n",
         "prix": 0.79,
         "qte_inventaire": 39,
         "categorie": {
             "id": 1,
-            "nom": "Prunier",
-            "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
+            "nom": "Fruits et legumes",
+            "description": "Cette catérogie contient des fruits et legumes"
         }
     },
     {
         "id": 7,
         "serial": "sdfds",
-        "nom": "orange",
-        "description": "un fruit de couleur orange",
-        "prix": 0.79,
+        "nom": "Framboises",
+        "description": "La framboise est un fruit délicat composé de drupéoles rouge vif liées autour d’un noyau central. Son goût sucré peut également être acidulé lorsqu’elle n’est pas tout à fait mûre. Dégustez-la dans vos céréales, smoothies ou yogourts, ou savourez-la recouverte de crème et de copeaux de chocolat.\n\n",
+        "prix": 4.99,
         "qte_inventaire": 40,
         "categorie": {
             "id": 1,
-            "nom": "Prunier",
-            "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
+            "nom": "Fruits et legumes",
+            "description": "Cette catérogie contient des fruits et legumes"
         }
     }
 ]

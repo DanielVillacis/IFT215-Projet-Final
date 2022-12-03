@@ -10,8 +10,13 @@
                 <tr id="grand_total"></tr>
             </table>
             <div id="boutons-panier">
-                <button type="button" id="btn-vider-panier" onclick="remove_product('+item.id+')" >Vider Panier</button>
-                <button type="button" id="btn-commander" onclick="remove_product('+item.id+')" >Commander</button>
+                <button type="button" class="btn btn-primary position-relative" id="btn-vider-panier" onclick="viderPanier()" >
+                    Vider Panier
+                </button>
+                <a href="commande.html" class="">
+                    <button type="button" class="btn btn-primary position-relative" id="btn-commander">Commander</button>
+                </a>
+                </button>
             </div>
         </div>
     </div>

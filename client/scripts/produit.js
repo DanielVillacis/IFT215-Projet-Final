@@ -46,12 +46,13 @@ function chargerpanier() {
             url: "/clients/"+localStorage.getItem('idclient')+"/panier",
             beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+localStorage.getItem('tokenclient')) ;},
             success: function( result ) {
-                console.log(result);console.log(result.items);
+                console.log(result);
+                console.log(result.items);
                 $.each(result.items, function (key, value) {
                     item = itemPanier_to_html(value);
                     $('#list_items').append(item);
                 });
-                grand_total = $('<td></td><td></td><td style=text-align:right;"><strong> Total : </strong></td><td><strong>' +'$'+result.valeur +' </strong></td>')
+                grand_total = $('<td></td><td></td><td colspan="2" style=text-align:right;"><strong> Total : </strong></td><td><strong id="total_value">' +'$'+result.valeur.toFixed(2) +' </strong></td>')
                 $('#grand_total').append(grand_total);
             }
         });
@@ -60,16 +61,13 @@ function chargerpanier() {
 
 function viderPanier(){
     $.ajax({
-        url: "/clients/"+localStorage.getItem('idclient')+"/panier/",
-        method:"PUT",
-        data: {"quantite": -1},
-        beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+localStorage.getItem('tokenclient') );},
-        success: function( result ) {
-            $.each(result, function (key, value) {
-                item = item_to_html(value);
-                $('#list_items').append(item);
-            });
-            $('#item_counter').text(result.items.length);
+        url: "/clients/"+localStorage.getItem('idclient')+"/panier",
+        beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+localStorage.getItem('tokenclient')) ;},
+        success: function (result) {
+            for (let i = 0; i < result.items.length; i++) {
+                remove_product(i);
+            }
+            $('#list_items').empty();
         }
     });
 }
@@ -81,10 +79,10 @@ function add_item(id_item){
         data: {"quantite": 1},
         beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+localStorage.getItem('tokenclient') );},
         success: function( result ) {
+            console.log(result.items[id_item].idProduit);
             $('#item_counter').text(result.items.length);
-            console.log(result.items[id_item].nomProduit);
             $('#list_items-qte-value-'+result.items[id_item].idProduit+'').text(result.items[id_item].quantite);
-            // doit aussi update prix total
+            $('#total_value').text(result.valeur.toFixed(2));
             // verifier disponible
         }
     });
@@ -97,11 +95,17 @@ function remove_item(id_item){
         data: {"quantite": -1},
         beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+localStorage.getItem('tokenclient') );},
         success: function( result ) {
-            $('#item_counter').text(result.items.length);
-            console.log(result.items[id_item].nomProduit);
-            $('#list_items-qte-value-'+result.items[id_item].idProduit+'').text(result.items[id_item].quantite);
-            // doit aussi update prix total
-            // verifier pas chiffre negatif
+            console.log(id_item);
+            if(result.items[id_item].quantite == 0){
+                console.log( 'Trying to remove: ' +'#tr-'+id_item+'');
+                remove_product(id_item);
+                //$('#tr-'+id_item+'').remove();
+            }
+            else{
+                $('#list_items-qte-value-'+result.items[id_item].idProduit+'').text(result.items[id_item].quantite);
+                $('#total_value').text(result.valeur.toFixed(2));
+                $('#item_counter').text(result.items.length);
+            }
         }
     });
 }
@@ -113,8 +117,14 @@ function remove_product(id_item){
         data: {},
         beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+localStorage.getItem('tokenclient') );},
         success: function( result ) {
+            console.log('Removing product');
+            console.log(result);
+            //console.log('ID dans la liste' + id_item);
+            //console.log('ID du produit' + result.items[id_item].idProduit);
             $('#item_counter').text(result.items.length);
-            // doit aussi update prix total
+            $('#total_value').text(result.valeur.toFixed(2));
+            // update panier visible
+            $('#tr-'+id_item+'').remove();
         }
     });
 }
@@ -123,12 +133,12 @@ function remove_product(id_item){
 function itemPanier_to_html(item) {
     let pTotal = item.prix * item.quantite;
     let prixTotal = pTotal.toFixed(2);
-    item_panier = $('<tr></tr>')
+    item_panier = $('<tr id="tr-'+item.idProduit+'"></tr>')
         .append('<td>' + item.nomProduit + '<img src="images/produits/'+item.nomProduit+ '.png" alt="" height=100 width=100/>' +'</td>')
         .append('<td>' + item.descriptionProduit + '</td>')
-        .append('<td>' + '<div id="list_items-qte">' + '<div id="list_items-qte-value-'+item.idProduit+'" style="align-self: center; margin-left: 10%;" >' + item.quantite + '</div>' + '<div id="list_items-qte-btn">' +'<button type="button" id="qte_add" onclick="add_item('+item.id+')">ˆ</button>' + '<button type="button" id="qte_remove" onclick="remove_item('+item.id+')"/>ˇ</button>' + '</div>' + '</div>' + '</td>')
+        .append('<td>' + '<div id="list_items-qte">' + '<div id="list_items-qte-value-'+item.id+'" style="align-self: center; margin-left: 10%;" >' + item.quantite + '</div>' + '<div id="list_items-qte-btn">' +'<button class="btn btn-primary position-relative" type="button" id="qte-button" onclick="add_item('+item.id+')">ˆ</button>' + '<button type="button" class="btn btn-primary position-relative" id="qte-button" onclick="remove_item('+item.id+')" value="ˇ"/>ˇ</button>' + '</div>' + '</div>' + '</td>')
         .append('<td>' +'$'+item.prix + '</td>')
-        .append('<td>'+ '<button type="button" id="btn-qte-remove-product" onclick="remove_product('+item.id+')" >X</button>' + '</td>');
+        .append('<td>'+ '<button type="button" class="btn btn-primary position-relative" id="btn-qte-remove-product" onclick="remove_product('+item.id+')" >X</button>' + '</td>');
     return $(item_panier);
 }
 

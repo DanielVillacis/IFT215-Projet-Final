@@ -229,6 +229,15 @@ form .group select{
     margin: 5% 10% 5% auto;
 }
 
+#qte-button {
+    height: 15px;
+    padding-top: 0px;
+    background: white;
+    border-color: lightgray;
+    color: blue;
+    text-align: center;
+}
+
 #boutons-panier{
     text-align: right;
 }
