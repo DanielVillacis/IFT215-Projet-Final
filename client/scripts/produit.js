@@ -96,8 +96,8 @@ function remove_item(id_item){
         beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+localStorage.getItem('tokenclient') );},
         success: function( result ) {
             console.log(id_item);
-            if(result.items[id_item].quantite == 0){
-                console.log( 'Trying to remove: ' +'#tr-'+id_item+'');
+            if(id_item.quantite == 0){
+                console.log( 'Trying to remove: ' +'#tr-'+result.items[id_item].idProduit+'');
                 remove_product(id_item);
                 //$('#tr-'+id_item+'').remove();
             }
@@ -117,8 +117,8 @@ function remove_product(id_item){
         data: {},
         beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+localStorage.getItem('tokenclient') );},
         success: function( result ) {
-            console.log('Removing product');
-            console.log(result);
+            //console.log('Removing product' +  '#tr-'+result.items[id_item].idProduit+'');
+            //console.log(result);
             //console.log('ID dans la liste' + id_item);
             //console.log('ID du produit' + result.items[id_item].idProduit);
             $('#item_counter').text(result.items.length);
@@ -133,10 +133,10 @@ function remove_product(id_item){
 function itemPanier_to_html(item) {
     let pTotal = item.prix * item.quantite;
     let prixTotal = pTotal.toFixed(2);
-    item_panier = $('<tr id="tr-'+item.idProduit+'"></tr>')
+    item_panier = $('<tr id="tr-'+item.id+'"></tr>')
         .append('<td>' + item.nomProduit + '<img src="images/produits/'+item.nomProduit+ '.png" alt="" height=100 width=100/>' +'</td>')
         .append('<td>' + item.descriptionProduit + '</td>')
-        .append('<td>' + '<div id="list_items-qte">' + '<div id="list_items-qte-value-'+item.id+'" style="align-self: center; margin-left: 10%;" >' + item.quantite + '</div>' + '<div id="list_items-qte-btn">' +'<button class="btn btn-primary position-relative" type="button" id="qte-button" onclick="add_item('+item.id+')">ˆ</button>' + '<button type="button" class="btn btn-primary position-relative" id="qte-button" onclick="remove_item('+item.id+')" value="ˇ"/>ˇ</button>' + '</div>' + '</div>' + '</td>')
+        .append('<td>' + '<div id="list_items-qte">' + '<div id="list_items-qte-value-'+item.idProduit+'" style="align-self: center; margin-left: 10%;" >' + item.quantite + '</div>' + '<div id="list_items-qte-btn">' +'<button class="btn btn-primary position-relative" type="button" id="qte-button" onclick="add_item('+item.id+')">ˆ</button>' + '<button type="button" class="btn btn-primary position-relative" id="qte-button" onclick="remove_item('+item.id+')" value="ˇ"/>ˇ</button>' + '</div>' + '</div>' + '</td>')
         .append('<td>' +'$'+item.prix + '</td>')
         .append('<td>'+ '<button type="button" class="btn btn-primary position-relative" id="btn-qte-remove-product" onclick="remove_product('+item.id+')" >X</button>' + '</td>');
     return $(item_panier);
