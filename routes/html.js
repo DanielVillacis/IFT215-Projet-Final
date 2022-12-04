@@ -33,4 +33,8 @@ router.get('/login', function(req, res){
     res.sendFile(path.join(__dirname + '/../client/login.html'));
 });
 
+router.get('/commande', function(req, res){
+    res.sendFile(path.join(__dirname + '/../client/commande.html'));
+});
+
 module.exports = router
