@@ -18,7 +18,7 @@
         "nom": "Tomate",
         "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
         "prix": 24.76,
-        "qte_inventaire": 38,
+        "qte_inventaire": 36,
         "categorie": {
             "id": 2,
             "nom": "Banane",
@@ -31,7 +31,7 @@
         "nom": "concombre",
         "description": "pas un jouet",
         "prix": 2.23,
-        "qte_inventaire": 44,
+        "qte_inventaire": 42,
         "categorie": {
             "id": 1,
             "nom": "Prunier",
@@ -44,7 +44,7 @@
         "nom": "carrote",
         "description": "une legume orange",
         "prix": 1.89,
-        "qte_inventaire": 96,
+        "qte_inventaire": 95,
         "categorie": {
             "id": 1,
             "nom": "Prunier",
@@ -70,7 +70,7 @@
         "nom": "orange",
         "description": "un fruit de couleur orange",
         "prix": 0.79,
-        "qte_inventaire": 40,
+        "qte_inventaire": 39,
         "categorie": {
             "id": 1,
             "nom": "Prunier",
@@ -83,7 +83,7 @@
         "nom": "orange",
         "description": "un fruit de couleur orange",
         "prix": 0.79,
-        "qte_inventaire": 39,
+        "qte_inventaire": 38,
         "categorie": {
             "id": 1,
             "nom": "Prunier",

@@ -87,5 +87,61 @@
             "items": []
         },
         "historique": []
+    },
+    {
+        "id": 3,
+        "prenom": "daniel",
+        "nom": "v",
+        "age": 24,
+        "adresse": "123, elm street",
+        "pays": "canada",
+        "courriel": "test@test.com",
+        "mdp": "$2b$08$kQO/Av2iYbFQsoNycN31eOn.J.D8363X/C2pP70xZUHFHRnRDJMT6",
+        "panier": {
+            "valeur": 57.45,
+            "items": [
+                {
+                    "id": 0,
+                    "idProduit": 1,
+                    "nomProduit": "Tomate",
+                    "descriptionProduit": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
+                    "prix": 24.76,
+                    "quantite": 2
+                },
+                {
+                    "id": 1,
+                    "idProduit": 2,
+                    "nomProduit": "concombre",
+                    "descriptionProduit": "pas un jouet",
+                    "prix": 2.23,
+                    "quantite": 2
+                },
+                {
+                    "id": 2,
+                    "idProduit": 3,
+                    "nomProduit": "carrote",
+                    "descriptionProduit": "une legume orange",
+                    "prix": 1.89,
+                    "quantite": 1
+                },
+                {
+                    "id": 3,
+                    "idProduit": 6,
+                    "nomProduit": "orange",
+                    "descriptionProduit": "un fruit de couleur orange",
+                    "prix": 0.79,
+                    "quantite": 1
+                },
+                {
+                    "id": 4,
+                    "idProduit": 5,
+                    "nomProduit": "orange",
+                    "descriptionProduit": "un fruit de couleur orange",
+                    "prix": 0.79,
+                    "quantite": 1
+                }
+            ]
+        },
+        "historique": []
     }
 ]
