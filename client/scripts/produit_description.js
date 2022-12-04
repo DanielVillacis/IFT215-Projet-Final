@@ -8,7 +8,7 @@ function chargerproduit_description (id_item) {
     $('#description-produit').text(currentProduct.description);
     $('#produit-prix').text('$' + currentProduct.prix);
     $('#produit-boutons').append('<div id="list_items-qte">' + '<div id="qte-value" style="align-self: center; margin-left: 10%;" >' + quantiteToAdd + '</div>' + '<div id="list_items-qte-btn">' +'<button class="btn btn-primary position-relative" type="button" id="qte-button" onclick="changeQte(1)">ˆ</button>' + '<button type="button" class="btn btn-primary position-relative" id="qte-button" onclick="changeQte(-1)" value="ˇ"/>ˇ</button>' + '</div>' + '</div>');
-    $('#produit-boutons').append('<button type="button" class="btn btn-primary position-relative" onclick="add_item_ToCart('+currentProduct.id+')" >Ajouter</button>');
+    $('#produit-boutons').append('<button type="button" class="btn btn-primary position-relative" style="margin-left: 20px" onclick="add_item_ToCart('+currentProduct.id+')" >Ajouter</button>');
 }
 
 function getProduct(id_item) {
