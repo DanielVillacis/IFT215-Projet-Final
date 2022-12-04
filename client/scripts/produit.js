@@ -13,7 +13,7 @@ function chargerproduit() {
 
 function item_to_html(item) {
     item_card = $('<div></div>').addClass('card mb-4 rounded-3 shadow-sm');
-    item_head = $('<div></div>').addClass('card-header py-3').append('<h4 class="my-0 fw-normal">' + item.nom + '</h4>');
+    item_head = $('<div></div>').addClass('card-header py-3').append('<a class="my-0 fw-normal" href="#/produit_description" id="produit-nom-titre"> <button type="button" class="btn btn-primary position-relative" id="btn-produit-description" onclick="getProduct('+item.id+')" >'+item.nom+'</button></a>' );
     item_detail = $('<div></div>').addClass('list-unstyled mt-3 mb-4')
         .append('<li>Qte dispo :' + item.qte_inventaire + '</li>')
         .append('<li>Categorie. : ' + item.categorie.nom + '</li>')
@@ -79,9 +79,10 @@ function add_item(id_item){
         data: {"quantite": 1},
         beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+localStorage.getItem('tokenclient') );},
         success: function( result ) {
-            console.log(result.items[id_item].idProduit);
+            console.log(result.items);
+            console.log('Adding ID : ' + id_item);
             $('#item_counter').text(result.items.length);
-            $('#list_items-qte-value-'+result.items[id_item].idProduit+'').text(result.items[id_item].quantite);
+            $('#list_items-qte-value-'+id_item+'').text(result.items[id_item].quantite);
             $('#total_value').text(result.valeur.toFixed(2));
             // verifier disponible
         }
@@ -95,14 +96,15 @@ function remove_item(id_item){
         data: {"quantite": -1},
         beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+localStorage.getItem('tokenclient') );},
         success: function( result ) {
-            console.log(id_item);
-            if(id_item.quantite == 0){
-                console.log( 'Trying to remove: ' +'#tr-'+result.items[id_item].idProduit+'');
+            console.log('My result');
+            console.log(result.items[id_item].quantite);
+            if(result.items[id_item].quantite == 0){
+                console.log('Have to remove you');
                 remove_product(id_item);
-                //$('#tr-'+id_item+'').remove();
+                id_item -1;
             }
             else{
-                $('#list_items-qte-value-'+result.items[id_item].idProduit+'').text(result.items[id_item].quantite);
+                $('#list_items-qte-value-'+id_item+'').text(result.items[id_item].quantite);
                 $('#total_value').text(result.valeur.toFixed(2));
                 $('#item_counter').text(result.items.length);
             }
@@ -117,13 +119,8 @@ function remove_product(id_item){
         data: {},
         beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+localStorage.getItem('tokenclient') );},
         success: function( result ) {
-            //console.log('Removing product' +  '#tr-'+result.items[id_item].idProduit+'');
-            //console.log(result);
-            //console.log('ID dans la liste' + id_item);
-            //console.log('ID du produit' + result.items[id_item].idProduit);
             $('#item_counter').text(result.items.length);
             $('#total_value').text(result.valeur.toFixed(2));
-            // update panier visible
             $('#tr-'+id_item+'').remove();
         }
     });
@@ -136,7 +133,7 @@ function itemPanier_to_html(item) {
     item_panier = $('<tr id="tr-'+item.id+'"></tr>')
         .append('<td>' + item.nomProduit + '<img src="images/produits/'+item.nomProduit+ '.png" alt="" height=100 width=100/>' +'</td>')
         .append('<td>' + item.descriptionProduit + '</td>')
-        .append('<td>' + '<div id="list_items-qte">' + '<div id="list_items-qte-value-'+item.idProduit+'" style="align-self: center; margin-left: 10%;" >' + item.quantite + '</div>' + '<div id="list_items-qte-btn">' +'<button class="btn btn-primary position-relative" type="button" id="qte-button" onclick="add_item('+item.id+')">ˆ</button>' + '<button type="button" class="btn btn-primary position-relative" id="qte-button" onclick="remove_item('+item.id+')" value="ˇ"/>ˇ</button>' + '</div>' + '</div>' + '</td>')
+        .append('<td>' + '<div id="list_items-qte">' + '<div id="list_items-qte-value-'+item.id+'" style="align-self: center; margin-left: 10%;" >' + item.quantite + '</div>' + '<div id="list_items-qte-btn">' +'<button class="btn btn-primary position-relative" type="button" id="qte-button" onclick="add_item('+item.id+')">ˆ</button>' + '<button type="button" class="btn btn-primary position-relative" id="qte-button" onclick="remove_item('+item.id+')" value="ˇ"/>ˇ</button>' + '</div>' + '</div>' + '</td>')
         .append('<td>' +'$'+item.prix + '</td>')
         .append('<td>'+ '<button type="button" class="btn btn-primary position-relative" id="btn-qte-remove-product" onclick="remove_product('+item.id+')" >X</button>' + '</td>');
     return $(item_panier);
