@@ -118,220 +118,240 @@ nav{
     margin-left: 34%;
 }
 
+#section-produit{
+    text-align: left;
+    width: 55%;
+    margin-left: 34%;
+    margin-top: 5%;
+}
+
+#section-produit-img{
+position: absolute;
+}
+
 #menu-gauche{
-    position: absolute;
-    width:30%;
-    text-align: center;
-    font-size: x-large;
+position: absolute;
+width:30%;
+text-align: center;
+font-size: x-large;
 }
 
 #menu-gauche a{
-    display: block;
-    height: 50px;
-    line-height: 50px;
-    padding: 1.5%;
-    background-color: var(--fond-menu);
-    color: var(--couleur-menu);
-    text-decoration: none;
-    cursor: pointer;
-    transition: color 0.5s, background-color 0.5s;
+display: block;
+height: 50px;
+line-height: 50px;
+padding: 1.5%;
+background-color: var(--fond-menu);
+color: var(--couleur-menu);
+text-decoration: none;
+cursor: pointer;
+transition: color 0.5s, background-color 0.5s;
 }
 
 #menu-gauche a:hover, #menu-gauche a.choisi:hover{
-    background-color: var(--fond-menu-inverse);
-    color: var(--couleur-menu-inverse);
+background-color: var(--fond-menu-inverse);
+color: var(--couleur-menu-inverse);
 }
 
 #menu-gauche a.choisi{
-    background-color: var(--fond-menu-choisi);
+background-color: var(--fond-menu-choisi);
 }
 
 fieldset{
-    max-width: 500px;
+max-width: 500px;
 }
 form .group{
-    margin-bottom: 20px;
+margin-bottom: 20px;
 }
 
 form .group label{
-    display: inline-block;
-    width: 25%;
-    margin-right: 5%;
-    text-align: left;
+display: inline-block;
+width: 25%;
+margin-right: 5%;
+text-align: left;
 }
 
 form .group select{
-    width: 32%;
+width: 32%;
 }
 #renseignement-auth input{
-    width: 30%;
+width: 30%;
 }
 
 .submit-group input[type=submit]{
-    width: 150px
+width: 150px
 }
 .submit-group input[type=button]{
-    width: 250px;
-    border: 0;
-    padding: 15px;
-    background: #5b77bd;
-    color: #fff;
-    cursor: pointer;
+width: 250px;
+border: 0;
+padding: 15px;
+background: #5b77bd;
+color: #fff;
+cursor: pointer;
 }
 .submit-group {
 
-    text-align: center;
-    padding: 14px 0px 14px 28px;
+text-align: center;
+padding: 14px 0px 14px 28px;
 }
 
 #table-inscription {
-    border-collapse: collapse;
-    margin: 25px 25px 25px 0;
+border-collapse: collapse;
+margin: 25px 25px 25px 0;
 }
 
 #table-inscription caption{
-    font-size: x-large;
+font-size: x-large;
 }
 
 #table-inscription td{
-    border: 1px solid black;
-    padding: 10px;
+border: 1px solid black;
+padding: 10px;
 }
 #table-panier {
-    border-collapse: separate;
-    border-spacing: 0 15px;
+border-collapse: separate;
+border-spacing: 0 15px;
 }
 
 #list_items td {
-    border-top: 1px solid darkgrey;
-    border-bottom: 1px solid darkgrey;
-    vertical-align: middle;
+border-top: 1px solid darkgrey;
+border-bottom: 1px solid darkgrey;
+vertical-align: middle;
 }
 
 #list_items td:first-child {
-    border-left: 1px solid darkgrey;
+border-left: 1px solid darkgrey;
 }
 
 #list_items td:last-child {
-    border-right: 1px solid darkgrey;
+border-right: 1px solid darkgrey;
 }
 
 #list_items-qte{
-    border: 1px solid lightgrey;
-    border-radius: 10px;
-    display: inline-flex;
-    height: 40px;
-    width: 80px;
+border: 1px solid lightgrey;
+border-radius: 10px;
+display: inline-flex;
+height: 40px;
+width: 80px;
 }
 
 #list_items-qte-btn{
-    display: grid;
-    margin: 5% 10% 5% auto;
+display: grid;
+margin: 5% 10% 5% auto;
 }
 
 #qte-button {
-    height: 15px;
-    padding-top: 0px;
-    background: white;
-    border-color: lightgray;
-    color: blue;
-    text-align: center;
+height: 15px;
+padding-top: 0px;
+background: white;
+border-color: lightgray;
+color: blue;
+text-align: center;
 }
 
 #boutons-panier{
-    text-align: right;
+text-align: right;
 }
 
 #pdv-grille {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    justify-content: space-between;
-    grid-row-gap: 25px;
-    margin-right: 25px;
-    margin-bottom: 25px;
+display: grid;
+grid-template-columns: auto auto auto;
+justify-content: space-between;
+grid-row-gap: 25px;
+margin-right: 25px;
+margin-bottom: 25px;
 }
 
 .pdv-item {
-    border: 1px solid rgba(0,0,0,0.8);
-    padding: 15px;
-    text-align: center;
+border: 1px solid rgba(0,0,0,0.8);
+padding: 15px;
+text-align: center;
 }
 
 .pdv-item h1{
-    font-size: x-large;
-    margin: 0 0 15px;
+font-size: x-large;
+margin: 0 0 15px;
 }
 
 .pdv-item h2{
-    font-size: medium;
-    text-align: left;
+font-size: medium;
+text-align: left;
 }
 .pdv-item ul{
-    padding-left: 20px;
+padding-left: 20px;
 }
 
 #pdv-flex{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+display: flex;
+flex-wrap: wrap;
+justify-content: flex-start;
 }
 
 #pdv-flex .pdv-item{
-    margin: 0 25px 25px 0;
+margin: 0 25px 25px 0;
 }
 
 #corps-principal{
-    margin-bottom: 25px;
+margin-bottom: 25px;
 }
 
 @media screen and (max-width: 900px) {
-    #pdv-grille {
-        grid-template-columns: auto auto;
-    }
+#pdv-grille {
+    grid-template-columns: auto auto;
+}
 }
 
 @media screen and (max-width: 600px) {
-    #pdv-grille {
-        grid-template-columns: auto;
-    }
+#pdv-grille {
+    grid-template-columns: auto;
+}
 }
 
 .centrer {
-    text-align: center;
+text-align: center;
 }
 
 #login-form {
-    max-width: 480px;
-    margin: 0 auto;
-    padding: 20px;
-    background: #fafafa;
-    border: 1px solid #ccc;
+max-width: 480px;
+margin: 0 auto;
+padding: 20px;
+background: #fafafa;
+border: 1px solid #ccc;
 }
 #login-form h1 {
-    margin: 0 0 20px 0;
+margin: 0 0 20px 0;
 }
 #login-form input {
-    width: 60%;
-    margin: 0 0 3px 0;
-    padding: 7px;
+width: 60%;
+margin: 0 0 3px 0;
+padding: 7px;
 }
 #login-form input[type=submit] {
-    border: 0;
-    padding: 15px;
-    background: #5b77bd;
-    color: #fff;
-    cursor: pointer;
+border: 0;
+padding: 15px;
+background: #5b77bd;
+color: #fff;
+cursor: pointer;
 }
 #login-form input[type=button] {
-    border: 0;
-    padding: 15px;
-    background: #5b77bd;
-    color: #fff;
-    cursor: pointer;
+border: 0;
+padding: 15px;
+background: #5b77bd;
+color: #fff;
+cursor: pointer;
 }
+
+#btn-produit-description{
+    background-color: transparent;
+    color: black;
+    border-color: transparent;
+    font-size: 20px;
+}
+
+
 * {
-    font-family: arial, sans-serif;
-    box-sizing: border-box;
+font-family: arial, sans-serif;
+box-sizing: border-box;
 }
 
 #titre-panier {
