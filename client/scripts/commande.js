@@ -36,3 +36,14 @@ function itemPanier_to_html(item) {
     return $(item_panier);
 }
 
+function confirmerCommande() {
+    console.log('Confirmer la commande');
+    swal("Votre commande a été confirmée!", "Merci pour votre achat!", "success");
+    // return to the home page after 3 seconds, and reload the page
+    setTimeout(function () {
+        window.location.replace("#/produits");
+        window.location.reload();   
+    }, 3000);
+}
+
+
