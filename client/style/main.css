@@ -672,3 +672,45 @@ h1 {
 .accordion p:last-child {
     margin-bottom: 0;
 }
+
+/* Styles pour la page commande admin */
+#commande_clients {
+    width: 100%;
+    height: 100%;
+    padding: 15px 35px;
+}
+
+.commande {
+    width: 100%;
+    height: 100%;
+    padding: 15px 35px;
+    margin: auto;
+    border: #06c 1px solid;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.numero_commande {
+    width: 20%;
+    height: 10%;
+    padding: 5px 25px;
+    border: #06c 1px solid;
+    border-radius: 10px;
+    background-color: rgba(0, 85, 255, 0.782);
+    color: white;
+}
+
+.id_client {
+    width: 20%;
+    height: 10%;
+    padding: 5px 25px;
+    border: #06c 1px solid;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
