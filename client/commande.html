@@ -5,11 +5,11 @@
         <div class="checkout">
             <div class="order">
                 <h2 id="titre-panier">Checkout</h2>
-                <table id="table-panier" class="table table-hover">
+                <table id="checkout-panier" class="checkout-panier">
                     <!-- Affichage de la liste de produits-->
-                    <tbody  id="list_items">
+                    <tbody  id="checkout-items">
                     </tbody>
-                    <tr id="grand_total"></tr>
+                    <tr id="checkout-total"></tr>
                 </table>
             </div>
             <h2 id="titre-panier">Informations de paiement</h2>
@@ -17,27 +17,27 @@
                 <div class="card-form">
                     <form id="form-paiement">
                         <div class="form-group">
-                            <input type="text" class="form-control" id="nom" placeholder="Nom">
-                            <input type="text" class="form-control" id="prenom" placeholder="Prénom">
+                            <input type="text" class="form-control" id="nom" placeholder="Nom" required>
+                            <input type="text" class="form-control" id="prenom" placeholder="Prénom" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="adresse" placeholder="Adresse">
+                            <input type="text" class="form-control" id="adresse" placeholder="Adresse" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="ville" placeholder="Ville">
-                            <input type="text" class="form-control" id="province" placeholder="Province">
-                            <input type="text" class="form-control" id="codePostal" placeholder="Code Postal">
+                            <input type="text" class="form-control" id="ville" placeholder="Ville" required>
+                            <input type="text" class="form-control" id="province" placeholder="Province" required>
+                            <input type="text" class="form-control" id="codePostal" placeholder="Code Postal" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="telephone" placeholder="Téléphone">
-                            <input type="text" class="form-control" id="courriel" placeholder="Courriel">
+                            <input type="text" class="form-control" id="telephone" placeholder="Téléphone" required>
+                            <input type="text" class="form-control" id="courriel" placeholder="Courriel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" required>
                         </div>
                         <div class="form-group">
-                            <input type='text' class="form-control" id='cardnumber' name='cardnumber' placeholder='1234 5678 9123 4567' pattern='\d*' title='Card Number' />
+                            <input type='text' class="form-control" id='cardnumber' name='cardnumber' placeholder='1234 5678 9123 4567' pattern='\d*' title='Card Number' required/>
                         </div>
                         <div class="form-group">
-                            <input type='text' class="form-control" id='cardexpiration' name='cardexpiration' placeholder="MM / YYYY" pattern="\d*" title='Card Expiration Date' />
-                            <input type='text' class="form-control" id='cardcvc' name='cardcvc' placeholder="123" pattern="\d*" title='CVC Code' />
+                            <input type='text' class="form-control" id='cardexpiration' name='cardexpiration' placeholder="MM / YYYY" pattern="\d*" title='Card Expiration Date' required/>
+                            <input type='text' class="form-control" id='cardcvc' name='cardcvc' placeholder="123" pattern="\d*" title='CVC Code' required/>
                         </div>
                         <button class='button-cta' title='Confirm your purchase' type="submit" onclick="confirmerCommande()"><span>Confirmer l'achat</span></button>
                     </form>
