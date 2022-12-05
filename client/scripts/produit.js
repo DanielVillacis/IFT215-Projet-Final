@@ -147,5 +147,19 @@ function itemPanier_to_html(item) {
     return $(item_panier);
 }
 
+function commander(){
+    $.ajax({
+        url: "/clients/"+localStorage.getItem('idclient')+"/commander",
+        method:"POST",
+        data: {},
+        beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+localStorage.getItem('tokenclient') );},
+        success: function( result ) {
+            console.log(result);
+            $('#checkout-items').text(result.items.length);
+            $('#checkout-total').text(result.valeur.toFixed(2));
+        }
+    });
+}
+
 $(function () {
 });

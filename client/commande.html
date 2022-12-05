@@ -1,0 +1,52 @@
+<section class="mt-2 container">
+    <div class="row">
+      <div class="col-md-10">
+        <!-- Affichage des produits du panier au coté droit et la form pour entrer les informations de paiement du coté gauche -->
+        <div class="checkout">
+            <div class="order">
+                <h2 id="titre-panier">Checkout</h2>
+                <table id="checkout-panier" class="checkout-panier">
+                    <!-- Affichage de la liste de produits-->
+                    <tbody class="checkout-items"  id="checkout-items">
+                    </tbody>
+                    <tr class="checkout-total" id="checkout-total"></tr>
+                </table>
+            </div>
+            <h2 id="titre-panier">Informations de paiement</h2>
+            <div class="paiement" id="paiement">
+                <div class="card-form">
+                    <form id="form-paiement">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="nom" placeholder="Nom" required>
+                            <input type="text" class="form-control" id="prenom" placeholder="Prénom" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="adresse" placeholder="Adresse" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="ville" placeholder="Ville" required>
+                            <input type="text" class="form-control" id="province" placeholder="Province" required>
+                            <input type="text" class="form-control" id="codePostal" placeholder="Code Postal" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="telephone" placeholder="Téléphone" required>
+                            <input type="text" class="form-control" id="courriel" placeholder="Courriel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" required>
+                        </div>
+                        <div class="form-group">
+                            <input type='text' class="form-control" id='cardnumber' name='cardnumber' placeholder='1234 5678 9123 4567' pattern='\d*' title='Card Number' required/>
+                        </div>
+                        <div class="form-group">
+                            <input type='text' class="form-control" id='cardexpiration' name='cardexpiration' placeholder="MM / YYYY" pattern="\d*" title='Card Expiration Date' required/>
+                            <input type='text' class="form-control" id='cardcvc' name='cardcvc' placeholder="123" pattern="\d*" title='CVC Code' required/>
+                        </div>
+                        <button class='button-cta' title='Confirm your purchase' type="submit" onclick="confirmercommande()"><span>Confirmer l'achat</span></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+

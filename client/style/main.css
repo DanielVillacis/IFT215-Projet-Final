@@ -351,6 +351,214 @@ cursor: pointer;
 font-family: arial, sans-serif;
 box-sizing: border-box;
 }
+
+#titre-panier {
+    text-align: center;
+    font-size: x-large;
+    margin-top: 20px;
+}
+
+.checkout {
+    width: 1000px;
+    height: 700px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    background-color: #dddfe6;
+    overflow: hidden;
+  
+    -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+        border-radius: 12px;
+  
+    -webkit-box-shadow: 0 30px 48px rgba(37,44,65,0.32);
+    -moz-box-shadow: 0 30px 48px rgba(37,44,65,0.32);
+        box-shadow: 0 30px 48px rgba(37,44,65,0.32);
+}
+
+.order {
+    width: 500px;
+    height: 700px;
+    padding: 0 30px;
+    float: left;
+    background-color: #f4f5f9;
+    z-index: 1;
+  
+    -webkit-box-shadow: 0 15px 24px rgba(37,44,65,0.16);
+    -moz-box-shadow: 0 15px 24px rgba(37,44,65,0.16);
+        box-shadow: 0 15px 24px rgba(37,44,65,0.16);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.checkout-panier {
+    width: 100%;
+    height: 500px;
+}
+
+.checkout-items {
+    width: 100%;
+    height: 480px;
+    margin-bottom: 50px;
+    overflow-y: scroll;
+}
+
+.checkout-total {
+    width: 100%;
+    height: 100px;
+    font-size: 26px;
+    font-weight: 600;
+    text-align: webkit-right;
+}
+
+.paiement {
+    z-index: 0;
+    width: 500px;
+    position: relative;
+    float: right;
+}
+
+.card-form {
+    width: 100%;
+    position: relative;
+    float: right;
+    padding: 15px 35px;
+}
+
+#nom {
+    width: 45%;
+    float: left;
+    margin-right: 5px;
+    margin-bottom: 20px;
+}
+
+#prenom {
+    width: 45%;
+    float: right;
+    margin-left: 5px;
+    margin-bottom: 20px;
+}
+
+#adresse {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#ville {
+    width: 35%;
+    float: left;
+    margin-bottom: 20px;
+    margin-right: 5px;
+}
+
+#codePostal {
+    width: 28%;
+    float: left;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+#province {
+    width: 25%;
+    float: right;
+    margin-bottom: 20px;
+    margin-left: 5px;
+}
+
+#telephone {
+    width: 45%;
+    float: left;
+    margin-right: 5px;
+    margin-bottom: 70px;
+}
+
+#courriel {
+    width: 45%;
+    float: right;
+    margin-left: 5px;
+    margin-bottom: 70px;
+}
+
+#cardexpiration {
+    width: 45%;
+    float: left;
+    margin-bottom: 20px;
+    margin-right: 5px;
+}
+
+#cardcvc {
+    width: 45%;
+    float: right;
+    margin-bottom: 20px;
+    margin-left: 5px;
+}
+
+
+.button-cta {
+    width: 100%;
+    height: 65px;
+    position: relative;
+    float: right;
+    right: 0px;
+    /* place the button on the bottom of the div */
+    bottom: -60px;
+    padding: 10px 20px;
+    background-color: #175dff;
+    border: 1px solid #175dff;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #f4f5f9;
+    z-index: -1;
+    
+    -webkit-transition: all 0.3s;
+       -moz-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+         -o-transition: all 0.3s;
+            transition: all 0.3s;
+}
+
+.button-cta:hover {
+    background: rgb(40, 255, 130);
+    border: 1px solid rgb(40, 255, 130);
+    color: #000000;
+}
+
+.button-cta span {
+    display: inline-block;
+    position: relative;
+    
+    -webkit-transition: all 0.3s;
+       -moz-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+         -o-transition: all 0.3s;
+            transition: all 0.3s;
+}
+
+.button-cta span:after {
+    content: '→';
+    color: #000000;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -40px;
+}
+  
+.button-cta:hover span {
+    padding-right: 45px;
+}
+  
+.button-cta:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+=======
 /*
  CSS for the main interaction
 */
