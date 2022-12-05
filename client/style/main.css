@@ -413,7 +413,6 @@ box-sizing: border-box;
     height: 100px;
     font-size: 26px;
     font-weight: 600;
-    text-align: webkit-right;
 }
 
 .paiement {
@@ -430,68 +429,68 @@ box-sizing: border-box;
     padding: 15px 35px;
 }
 
-#nom {
+#id_nom {
     width: 45%;
     float: left;
     margin-right: 5px;
     margin-bottom: 20px;
 }
 
-#prenom {
+#id_prenom {
     width: 45%;
     float: right;
     margin-left: 5px;
     margin-bottom: 20px;
 }
 
-#adresse {
+#id_adresse {
     width: 100%;
     margin-bottom: 20px;
 }
 
-#ville {
+#id_ville {
     width: 35%;
     float: left;
     margin-bottom: 20px;
     margin-right: 5px;
 }
 
-#codePostal {
+#id_codePostal {
     width: 28%;
     float: left;
     margin-bottom: 20px;
     margin-left: 20px;
 }
 
-#province {
+#id_province {
     width: 25%;
     float: right;
     margin-bottom: 20px;
     margin-left: 5px;
 }
 
-#telephone {
+#id_telephone {
     width: 45%;
     float: left;
     margin-right: 5px;
     margin-bottom: 70px;
 }
 
-#courriel {
+#id_courriel {
     width: 45%;
     float: right;
     margin-left: 5px;
     margin-bottom: 70px;
 }
 
-#cardexpiration {
+#id_cardexpiration {
     width: 45%;
     float: left;
     margin-bottom: 20px;
     margin-right: 5px;
 }
 
-#cardcvc {
+#id_cardcvc {
     width: 45%;
     float: right;
     margin-bottom: 20px;
