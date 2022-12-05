@@ -32,7 +32,7 @@ function commande_to_html(vente, client) {
     // afficher le numero de commande, le id du client, l'adresse de livraison, la date de la commande et apres une liste des produits commandes avec leur id et leur quantite selon les donnees du fichier ventes.json
     
     // afficher le numero de commande
-    var commande = $('<div class="commande"></div>');
+    var commande = $('<div class="commande" id="commande_'+vente.id+'"></div>');
     var numero_commande = $('<div class="numero_commande"></div>');
     numero_commande.text('Commande #'+vente.id);
     commande.append(numero_commande);
@@ -68,7 +68,7 @@ function commande_to_html(vente, client) {
 
     // afficher un bouton au coté droit de chaque commande pour confirmer la livraison
     var confirmer_livraison = $('<div class="confirmer_livraison"></div>');
-    var confirmer_livraison_button = $('<button class="confirmer_livraison_button" onclick="confimerlivraison()">Expédier</button>');
+    var confirmer_livraison_button = $('<button class="confirmer_livraison_button" onclick="confimerlivraison('+vente.id+')">Expédier</button>');
     
     confirmer_livraison.append(confirmer_livraison_button);
     commande.append(confirmer_livraison);
@@ -77,14 +77,20 @@ function commande_to_html(vente, client) {
     // return $('<div>test</div>');
 }
 
-function confimerlivraison() {
+function confimerlivraison(idVente) {
     console.log('confirmer livraison');
+    console.log(idVente);
+    $('#commande_'+idVente+'').remove();
+    let newStatus = 'prepare';
     $.ajax({
-        url: '/vente',
-        method: 'DELETE',
+        url: "/ventes/"+idVente,
+        method: 'PUT',
+        data: {"idVente": idVente, "status": newStatus},
         beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+localStorage.getItem('tokenclient'));},
         success: function (result) {
-            console.log(result);
+            console.log('La vente est effectuée');
+            //result.status = newStatus;
+            // Il faut etre admin, mais commment faire?
         }
     });
     swal("Livraison confirmée!", "La commande a été livrée avec succès!", "success");
