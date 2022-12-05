@@ -398,6 +398,17 @@ box-sizing: border-box;
     margin-bottom: 20px;
 }
 
+.checkout-panier {
+    width: 400px;
+    height: 500px;
+    padding: 30px 30px;
+    /* z-index: 1; */
+}
+
+.checkout-items {
+    overflow: scroll;
+}
+
 .paiement {
     z-index: 0;
     width: 500px;

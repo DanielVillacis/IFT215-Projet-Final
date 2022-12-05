@@ -2,7 +2,7 @@
 // appel a la fonction chargerPanier.js et function itemPanier_to_html(item)
 
 
-function chargerCommande() {
+function chargercommande() {
     if (localStorage.getItem('idclient') === 'undefined') {
         swal("Vous devez vous connecter pour accéder au panier!", "veuillez vous connecter!", "error");
         window.location.replace("#/login");
