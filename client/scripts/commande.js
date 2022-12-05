@@ -39,6 +39,8 @@ function checkout_to_HMTL(item) {
 
 function confirmercommande() {
     // confirmerCommande();
+    // vider le panier
+    viderPanier();
     swal("Votre commande a été confirmée!", "Merci pour votre achat!", "success");
     window.location.replace("./#/accueil");
     window.location.reload();
