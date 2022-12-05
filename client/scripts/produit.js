@@ -19,7 +19,7 @@ function item_to_html(item) {
         .append('<li>Qte dispo :' + item.qte_inventaire + '</li>')
         .append('<li>Categorie. : ' + item.categorie.nom + '</li>')
         .append('</br>')
-        .append('<small class="small">' + item.description + '</smalll> <h1 class="card-title text-center" style="margin-top: 25px;">$'+item.prix+'</h1> <p class="w-100 display-6 text-center"><button type="button" class="btn btn-primary position-relative" onclick="add_item_ToCart('+item.id+')"><i class="bi bi-cart-plus"></i></button></p>');
+        .append('<small class="small"> <div id="item-description"> ' + item.description + '</div></smalll> <h1 class="card-title text-center" style="margin-top: 25px;">$'+item.prix+'</h1> <p class="w-100 display-6 text-center"><button type="button" class="btn btn-primary position-relative" onclick="add_item_ToCart('+item.id+')"><i class="bi bi-cart-plus"></i></button></p>');
     item_body = $('<div></div>').addClass('card-body')
         .append(item_detail);
     item_card.append(item_head).append(item_body);

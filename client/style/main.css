@@ -252,6 +252,14 @@ text-align: center;
 #boutons-panier{
 text-align: right;
 }
+#item-description{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+}
+
 
 #pdv-grille {
 display: grid;
