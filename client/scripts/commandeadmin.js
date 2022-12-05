@@ -68,7 +68,7 @@ function commande_to_html(vente, client) {
 
     // afficher un bouton au coté droit de chaque commande pour confirmer la livraison
     var confirmer_livraison = $('<div class="confirmer_livraison"></div>');
-    var confirmer_livraison_button = $('<button class="confirmer_livraison_button" onclick="confimerlivraison()">Confirmer la livraison</button>');
+    var confirmer_livraison_button = $('<button class="confirmer_livraison_button" onclick="confimerlivraison()">Expédier</button>');
     
     confirmer_livraison.append(confirmer_livraison_button);
     commande.append(confirmer_livraison);
