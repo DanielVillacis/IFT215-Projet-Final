@@ -18,7 +18,7 @@ function chargercommande() {
                     item = checkout_to_HMTL(value);
                     $('#checkout-items').append(item);
                 });
-                grand_total = $('<td></td><td></td><td colspan="2" style=text-align:right;"><strong> Total : </strong></td><td><strong id="total_value">' +'$'+result.valeur.toFixed(2) +' </strong></td>')
+                grand_total = $('<td></td><td></td><td colspan="2" style=text-align:right;"><strong>Total : </strong></td><td><strong id="total_value">' +'$'+result.valeur.toFixed(2) +' </strong></td>')
                 $('#checkout-total').append(grand_total);
             }
         });
@@ -30,22 +30,18 @@ function checkout_to_HMTL(item) {
     let pTotal = item.prix * item.quantite;
     let prixTotal = pTotal.toFixed(2);
     item_panier = $('<tr id="tr-'+item.id+'"></tr>')
-        .append('<td>' + item.nomProduit + '<img src="images/produits/'+item.nomProduit+ '.png" alt="" height=50 width=50/>' +'</td>')
+        .append('<td>' + item.nomProduit + '<img src="images/produits/'+item.nomProduit+ '.png" alt="" height=60 width=70/>' +'</td>')
         .append('<td>' + '<div id="list_items-qte">' + '<div id="list_items-qte-value-'+item.id+'" style="align-self: center; margin-left: 10%;" >' + item.quantite + '</div>' + '<div id="list_items-qte-btn">' + '</div>' + '</td>')
         .append('<td>' +'$'+item.prix + '</td>')
     return $(item_panier);
 }
 
 
-function confirmerCommande() {
-    confirmerCommande();
-    console.log('Confirmer la commande');
+function confirmercommande() {
+    // confirmerCommande();
     swal("Votre commande a été confirmée!", "Merci pour votre achat!", "success");
-    // return to the home page after 3 seconds, and reload the page
-    setTimeout(function () {
-        window.location.replace("#/produits");
-        window.location.reload();
-    }, 3000);
+    window.location.replace("./#/accueil");
+    window.location.reload();
 }
 
 function confirmerInformation() {

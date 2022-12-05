@@ -18,7 +18,7 @@
         "nom": "Tomate",
         "description": "Reconnue à sa silhouette mince et oblongue, la tomate Roma, ou tomate prune, possède une peau épaisse et une texture charnue. Comme elle est sucrée et contient peu de graines, elle constitue un choix populaire pour la préparation de sauces et de pâte de tomate. On la consomme également fraîche encore grillée dans les lasagnes ou autres plats de pâtes.",
         "prix": 1.06,
-        "qte_inventaire": 19,
+        "qte_inventaire": 18,
         "categorie": {
             "id": 2,
             "nom": "Fruits et legumes",
@@ -31,7 +31,7 @@
         "nom": "Concombre",
         "description": "Le concombre est un fruit cylindrique à peau verte et à chair blanche croquante parsemée de graines comestibles. On le mange généralement cru, avec ou sans la peau. Ajoutez-en quelques tranches sur un plateau de légumes ou savourez-le en salade avec de la menthe et du jus de citron.",
         "prix": 2.49,
-        "qte_inventaire": 27,
+        "qte_inventaire": 26,
         "categorie": {
             "id": 1,
             "nom": "Fruits et legumes",
@@ -44,7 +44,7 @@
         "nom": "Carotte",
         "description": "La silhouette svelte de la carotte peut s’habiller de bien d’autres couleurs que son orangé si caractéristique. Offerte à l’année, elle se mange crue ou s’apprête de mille et une façons : grillée au four, coupée puis attendrie dans les soupes ou autres plats lentement cuisinés, ou incorporée dans un délicieux gâteau au glaçage crémeux.",
         "prix": 3.49,
-        "qte_inventaire": 95,
+        "qte_inventaire": 94,
         "categorie": {
             "id": 1,
             "nom": "Fruits et legumes",
@@ -70,7 +70,7 @@
         "nom": "Pomme",
         "description": "La pomme Royal Gala, sucrée et croquante, présente des rayures rose-orangé sur un fond jaune. Juteuse et parfumée, elle se déguste davantage telle quelle. Savourez-la en tranches dans une salade avec du fromage bleu et des noix grillées.\n\n",
         "prix": 1.39,
-        "qte_inventaire": 40,
+        "qte_inventaire": 39,
         "categorie": {
             "id": 1,
             "nom": "Fruits et legumes",
@@ -83,7 +83,7 @@
         "nom": "Avocats",
         "description": "L’avocat présente une peau rugueuse vert foncé à presque noir une fois bien mûr. Coupez-le en deux sur le sens de la longueur, retirez sa chair crémeuse - que vous arroserez de jus de citron pour l’empêcher de brunir - avant d’en faire un guacamole ou un smoothie. L’onctuosité de ce fruit au goût fin se marie bien aux salades ou aux sandwichs BLT.\n\n",
         "prix": 0.79,
-        "qte_inventaire": 39,
+        "qte_inventaire": 37,
         "categorie": {
             "id": 1,
             "nom": "Fruits et legumes",
@@ -96,7 +96,7 @@
         "nom": "Framboises",
         "description": "La framboise est un fruit délicat composé de drupéoles rouge vif liées autour d’un noyau central. Son goût sucré peut également être acidulé lorsqu’elle n’est pas tout à fait mûre. Dégustez-la dans vos céréales, smoothies ou yogourts, ou savourez-la recouverte de crème et de copeaux de chocolat.\n\n",
         "prix": 4.99,
-        "qte_inventaire": 40,
+        "qte_inventaire": 39,
         "categorie": {
             "id": 1,
             "nom": "Fruits et legumes",
