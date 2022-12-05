@@ -8,24 +8,37 @@ function verifielogin(COURRIEL_CLIENT,COURRIEL_MDP) {
             console.log(result);
             ID_CLIENT = result.idClient;
             TOKEN_CLIENT = result.token;
+            ROLE_CLIENT = result.role;
             localStorage.setItem('idclient',ID_CLIENT);
             localStorage.setItem('tokenclient',TOKEN_CLIENT);
-            $.ajax({
-                url: "/clients/"+ID_CLIENT,
-                    beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+TOKEN_CLIENT );},
-                success: function( result ) {
-                    console.log("le prénom");
-                    PRENOM_CLIENT = result.prenom;
-                    localStorage.setItem('prenom',PRENOM_CLIENT);
-                    console.log(localStorage.getItem('prenom'));
-                    loginheader = $('<div id="login"></div>')
-                        .append('Bonjour '+localStorage.getItem('prenom')+' '+'<img src="images/logout.png" onclick="deconnexion()" style="cursor: pointer;" class="padding "alt="Se déconnecter" width="70" title="Se déconnecter"/></a><a href="#/panier" class=""><button type="button" class="btn btn-primary position-relative"><i class="bi bi-cart-plus"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="item_counter"></span></button></a>')
-                    $('#login').replaceWith(loginheader);
-                    swal("Connexion réussi!", "Vous pouvez ajouter des items à votre panier!", "success");
-                    window.location.replace("#/produit");
-                }
-            });
+            localStorage.setItem('roleclient',ROLE_CLIENT);
+            if (ROLE_CLIENT == 'admin'){
+                loginheader = $('<div id="login"></div>')
+                    .append('Bonjour '+'admin'+' '+'<img src="images/logout.png" onclick="deconnexion()" style="cursor: pointer;" class="padding "alt="Se déconnecter" width="70" title="Se déconnecter"/></a><a href="#/panier" class=""><button type="button" class="btn btn-primary position-relative"><i class="bi bi-cart-plus"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="item_counter"></span></button></a>')
+                $('#login').replaceWith(loginheader);
+                swal("Connexion réussi!", "Vous pouvez faire la gestion des commandes!", "success");
+                window.location.replace("#/commandeadmin");
+            }
+            else{
+                $.ajax({
+                    url: "/clients/"+ID_CLIENT,
+                        beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+TOKEN_CLIENT );},
+                    success: function( result ) {
+                        console.log("le prénom");
+                        PRENOM_CLIENT = result.prenom;
+                        localStorage.setItem('prenom',PRENOM_CLIENT);
+                        console.log(localStorage.getItem('prenom'));
+                        loginheader = $('<div id="login"></div>')
+                            .append('Bonjour '+localStorage.getItem('prenom')+' '+'<img src="images/logout.png" onclick="deconnexion()" style="cursor: pointer;" class="padding "alt="Se déconnecter" width="70" title="Se déconnecter"/></a><a href="#/panier" class=""><button type="button" class="btn btn-primary position-relative"><i class="bi bi-cart-plus"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="item_counter"></span></button></a>')
+                        $('#login').replaceWith(loginheader);
 
+
+                        swal("Connexion réussi!", "Vous pouvez ajouter des items à votre panier!", "success");
+                        window.location.replace("#/produit");
+
+                    }
+                });
+            }
         },
         error: function (result) {
             swal("Mot de passe/courriel incorrect!", "veuillez essayer à nouveau!", "error");

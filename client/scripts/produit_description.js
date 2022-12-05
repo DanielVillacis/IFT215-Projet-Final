@@ -8,7 +8,7 @@ function chargerproduit_description (id_item) {
     $('#description-produit').text(currentProduct.description);
     $('#produit-prix').text('$' + currentProduct.prix);
     $('#produit-boutons').append('<div id="list_items-qte">' + '<div id="qte-value" style="align-self: center; margin-left: 10%;" >' + quantiteToAdd + '</div>' + '<div id="list_items-qte-btn">' +'<button class="btn btn-primary position-relative" type="button" id="qte-button" onclick="changeQte(1)">ˆ</button>' + '<button type="button" class="btn btn-primary position-relative" id="qte-button" onclick="changeQte(-1)" value="ˇ"/>ˇ</button>' + '</div>' + '</div>');
-    $('#produit-boutons').append('<button type="button" class="btn btn-primary position-relative" onclick="add_item_ToCart('+currentProduct.id+')" >Ajouter</button>');
+    $('#produit-boutons').append('<button type="button" class="btn btn-primary position-relative" style="margin-left: 20px" onclick="add_item_ToCart('+currentProduct.id+')" >Ajouter</button>');
 }
 
 function getProduct(id_item) {
@@ -36,18 +36,23 @@ function changeQte(qte){
 }
 
 function add_item_ToCart(id_item){
-    $.ajax({
-        url: "/clients/"+localStorage.getItem('idclient')+"/panier",
-        method:"POST",
-        data: {"idProduit": id_item, "quantite": quantiteToAdd},
-        beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+localStorage.getItem('tokenclient'));},
-        success: function( result ) {
-            $('#item_counter').text(result.items.length);
-            quantiteToAdd=1;
-        }
-    });
+    if (localStorage.getItem('idclient') === 'undefined') {
+        swal("Vous devez vous connecter pour accéder au panier!", "veuillez vous connecter!", "error");
+        window.location.replace("#/login");
+    }
+    else {
+        $.ajax({
+            url: "/clients/"+localStorage.getItem('idclient')+"/panier",
+            method:"POST",
+            data: {"idProduit": id_item, "quantite": quantiteToAdd},
+            beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+localStorage.getItem('tokenclient'));},
+            success: function( result ) {
+                $('#item_counter').text(result.items.length);
+                quantiteToAdd=1;
+            }
+        });
+    }
 }
-
 
 
 

@@ -83,7 +83,7 @@
         "nom": "Avocats",
         "description": "L’avocat présente une peau rugueuse vert foncé à presque noir une fois bien mûr. Coupez-le en deux sur le sens de la longueur, retirez sa chair crémeuse - que vous arroserez de jus de citron pour l’empêcher de brunir - avant d’en faire un guacamole ou un smoothie. L’onctuosité de ce fruit au goût fin se marie bien aux salades ou aux sandwichs BLT.\n\n",
         "prix": 0.79,
-        "qte_inventaire": 37,
+        "qte_inventaire": 38,
         "categorie": {
             "id": 1,
             "nom": "Fruits et legumes",

@@ -15,25 +15,33 @@ function item_to_html(item) {
     item_card = $('<div></div>').addClass('card mb-4 rounded-3 shadow-sm');
     item_head = $('<div></div>').addClass('card-header py-3').append('<a class="my-0 fw-normal" href="#/produit_description" id="produit-nom-titre"> <button type="button" class="btn btn-primary position-relative" id="btn-produit-description" onclick="getProduct('+item.id+')" >'+item.nom+'</button></a>' );
     item_detail = $('<div></div>').addClass('list-unstyled mt-3 mb-4')
+        .append('<img src="images/produits/'+item.nom+ '.png" style="float:none;margin-left: 25%;" alt="" height=100 width=100/>')
         .append('<li>Qte dispo :' + item.qte_inventaire + '</li>')
         .append('<li>Categorie. : ' + item.categorie.nom + '</li>')
         .append('</br>')
-        .append('<small class="small">' + item.description + '</smalll> <p class="w-100 display-6 text-center"><button type="button" class="btn btn-primary position-relative" onclick="add_item_ToCart('+item.id+')"><i class="bi bi-cart-plus"></i></button></p>');
-    item_body = $('<div></div>').addClass('card-body').append('<h1 class="card-title text-center"> $' + item.prix +  '</h1>').append(item_detail);
+        .append('<small class="small">' + item.description + '</smalll> <h1 class="card-title text-center" style="margin-top: 25px;">$'+item.prix+'</h1> <p class="w-100 display-6 text-center"><button type="button" class="btn btn-primary position-relative" onclick="add_item_ToCart('+item.id+')"><i class="bi bi-cart-plus"></i></button></p>');
+    item_body = $('<div></div>').addClass('card-body')
+        .append(item_detail);
     item_card.append(item_head).append(item_body);
     return $('<div></div>').addClass('col-md-3').append(item_card);
 }
 
 function add_item_ToCart(id_item){
-    $.ajax({
-        url: "/clients/"+localStorage.getItem('idclient')+"/panier",
-        method:"POST",
-        data: {"idProduit": id_item, "quantite": 1},
-        beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+localStorage.getItem('tokenclient'));},
-        success: function( result ) {
-            $('#item_counter').text(result.items.length);
-        }
-    });
+    if (localStorage.getItem('idclient') === 'undefined') {
+        swal("Vous devez vous connecter pour accéder au panier!", "veuillez vous connecter!", "error");
+        window.location.replace("#/login");
+    }
+    else {
+        $.ajax({
+            url: "/clients/"+localStorage.getItem('idclient')+"/panier",
+            method:"POST",
+            data: {"idProduit": id_item, "quantite": 1},
+            beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+localStorage.getItem('tokenclient'));},
+            success: function( result ) {
+                $('#item_counter').text(result.items.length);
+            }
+        });
+    }
 }
 
 function chargerpanier() {

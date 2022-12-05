@@ -36,6 +36,12 @@ router.get('/panier', function(req, res){
 router.get('/login', function(req, res){
     res.sendFile(path.join(__dirname + '/../client/login.html'));
 });
+router.get('/aide', function(req, res){
+    res.sendFile(path.join(__dirname + '/../client/aide.html'));
+});
+router.get('/commandeadmin', function(req, res){
+    res.sendFile(path.join(__dirname + '/../client/commandeadmin.html'));
+});
 
 router.get('/commande', function(req, res){
     res.sendFile(path.join(__dirname + '/../client/commande.html'));

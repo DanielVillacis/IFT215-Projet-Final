@@ -3,7 +3,7 @@
 <section class="mt-2 container">
     <form method="post">
         <fieldset id="login-form">
-
+        <h5>Veuillez remplir tous les champs</h5>
             <div class="group">
                 <label for="prenom">Prénom</label>
                 <input type="text" name="prenom" id="prenom" required/>
@@ -14,7 +14,7 @@
             </div>
             <div class="group">
                 <label for="age">Age</label>
-                <input type="text" name="age" id="age" required/>
+                <input type="text" name="age" placeholder="Numérique" id="age" required/>
             </div>
             <div class="group">
                 <label for="adresse">Adresse</label>
@@ -26,7 +26,7 @@
             </div>
             <div class="group">
                 <label for="courriel">Courriel</label>
-                <input type="email" name="courriel" id="courriel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" required/>
+                <input type="email" name="courriel" id="courriel" placeholder="courriel@domain.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" required/>
             </div>
             <div class="group">
                 <label for="mot-de-passe">Mot de passe</label>
