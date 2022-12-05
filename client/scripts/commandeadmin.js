@@ -89,5 +89,4 @@ function confimerlivraison() {
     });
     swal("Livraison confirmée!", "La commande a été livrée avec succès!", "success");
     window.location.replace('#/commandeadmin');
-    window.location.reload();
 }
