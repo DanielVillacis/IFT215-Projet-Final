@@ -38,33 +38,37 @@ function checkout_to_HMTL(item) {
 
 
 function confirmercommande() {
-    let idClient = localStorage.getItem('idclient');
-    let montant = document.getElementById("total_value").innerHTML;
-    let produits = [];
-    let status = "reçu";
-    let date = new Date();
-    let items = document.getElementById("checkout-items").children;
-    for (let i = 0; i < items.length; i++) {
-        let item = items[i];
-        let idProduit = item.id.split('-')[1];
-        let quantite = document.getElementById("list_items-qte-value-"+idProduit).innerHTML;
-        produits.push({"idProduit": idProduit, "quantite": quantite});
-    }
-    console.log(produits);
-    $.ajax({
-        url: "/ventes",
-        type: "POST",
-        data: JSON.stringify({"idClient": idClient, "montant": montant, "produits": produits, "status": status, "date": date}),
-        contentType: "application/json",
-        beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+localStorage.getItem('tokenclient')) ;},
-        success: function( result ) {
-            console.log(result);
-            swal("Votre commande a été envoyée avec succès!", "Merci!", "success");
-            window.location.replace("#/produits");
-        }
-    });
+    // let idClient = localStorage.getItem('idclient');
+    // let montant = document.getElementById("total_value").innerHTML;
+    // let produits = [];
+    // let status = "reçu";
+    // let date = new Date();
+    // let items = document.getElementById("checkout-items").children;
+    // for (let i = 0; i < items.length; i++) {
+    //     let item = items[i];
+    //     let idProduit = item.id.split('-')[1];
+    //     let quantite = document.getElementById("list_items-qte-value-"+idProduit).innerHTML;
+    //     produits.push({"idProduit": idProduit, "quantite": quantite});
+    // }
+    // console.log(produits);
+    // $.ajax({
+    //     url: "/ventes",
+    //     type: "POST",
+    //     data: JSON.stringify({"idClient": idClient, "montant": montant, "produits": produits, "status": status, "date": date}),
+    //     contentType: "application/json",
+    //     beforeSend: function (xhr){xhr.setRequestHeader('Authorization', "Basic "+localStorage.getItem('tokenclient')) ;},
+    //     success: function( result ) {
+    //         console.log(result);
+    //         swal("Votre commande a été envoyée avec succès!", "Merci!", "success");
+    //         window.location.replace("#/produits");
+    //     }
+    // });
+
     swal("Votre commande a été envoyée avec succès!", "Merci!", "success");
-    window.location.replace("#/produits");
+
+    setTimeout(() => {
+        window.location.replace("#/produit");
+    }, 2000);
 }
 
 

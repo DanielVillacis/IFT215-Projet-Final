@@ -18,7 +18,7 @@
         "nom": "Tomate",
         "description": "Reconnue à sa silhouette mince et oblongue, la tomate Roma, ou tomate prune, possède une peau épaisse et une texture charnue. Comme elle est sucrée et contient peu de graines, elle constitue un choix populaire pour la préparation de sauces et de pâte de tomate. On la consomme également fraîche encore grillée dans les lasagnes ou autres plats de pâtes.",
         "prix": 1.06,
-        "qte_inventaire": 17,
+        "qte_inventaire": 16,
         "categorie": {
             "id": 2,
             "nom": "Fruits et legumes",
@@ -31,7 +31,7 @@
         "nom": "Concombre",
         "description": "Le concombre est un fruit cylindrique à peau verte et à chair blanche croquante parsemée de graines comestibles. On le mange généralement cru, avec ou sans la peau. Ajoutez-en quelques tranches sur un plateau de légumes ou savourez-le en salade avec de la menthe et du jus de citron.",
         "prix": 2.49,
-        "qte_inventaire": 25,
+        "qte_inventaire": 24,
         "categorie": {
             "id": 1,
             "nom": "Fruits et legumes",

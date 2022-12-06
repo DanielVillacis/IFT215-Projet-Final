@@ -374,14 +374,14 @@ box-sizing: border-box;
     left: 50%;
     background-color: #dddfe6;
     overflow: hidden;
-  
+
     -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
-  
+
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
         border-radius: 12px;
-  
+
     -webkit-box-shadow: 0 30px 48px rgba(37,44,65,0.32);
     -moz-box-shadow: 0 30px 48px rgba(37,44,65,0.32);
         box-shadow: 0 30px 48px rgba(37,44,65,0.32);
@@ -394,7 +394,7 @@ box-sizing: border-box;
     float: left;
     background-color: #f4f5f9;
     z-index: 1;
-  
+
     -webkit-box-shadow: 0 15px 24px rgba(37,44,65,0.16);
     -moz-box-shadow: 0 15px 24px rgba(37,44,65,0.16);
         box-shadow: 0 15px 24px rgba(37,44,65,0.16);
@@ -522,7 +522,7 @@ box-sizing: border-box;
     font-size: 24px;
     color: #f4f5f9;
     z-index: -1;
-    
+
     -webkit-transition: all 0.3s;
        -moz-transition: all 0.3s;
         -ms-transition: all 0.3s;
@@ -539,7 +539,7 @@ box-sizing: border-box;
 .button-cta span {
     display: inline-block;
     position: relative;
-    
+
     -webkit-transition: all 0.3s;
        -moz-transition: all 0.3s;
         -ms-transition: all 0.3s;
@@ -555,11 +555,11 @@ box-sizing: border-box;
     top: 0;
     right: -40px;
 }
-  
+
 .button-cta:hover span {
     padding-right: 45px;
 }
-  
+
 .button-cta:hover span:after {
     opacity: 1;
     right: 0;
@@ -699,11 +699,11 @@ h1 {
 }
 
 .numero_commande {
-    width: 18%;
+    width: 15%;
     height: 10%;
     padding: 5px 25px;
     border: rgb(0, 0, 0) 1px solid;
-    border-radius: 10px; 
+    border-radius: 10px;
     background-color: rgba(0, 85, 255, 0.782);
     color: white;
     font-weight: bold;
@@ -754,7 +754,7 @@ h1 {
     background: rgb(39, 255, 143);
     border: 1px solid rgb(0, 0, 0);
     color: #000000;
-    
+
 }
 
 
